@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpha-欢迎您</title>
+    <link rel="shortcut icon" href="../icon/title.ico"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+
+        .footer img{
+            margin:20px;
+            width: 40px;
+            height: 40px;background-color: #ccc;}
+        .footer .footer-bottom{text-align:center;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".navbar-nav li").click(function () {
+                $(".nav li").each(function () {
+                    $(".nav li").attr('class','');
+                });
+                $(this).attr('class','active');
+            })
+        })
+    </script>
+    <style>
+        h2{text-align:center;}
+
+        h2 span{
+            margin:0 auto;padding:20px 0;}
+    p{text-indent:2em;}
+        .text{line-height: 24px;}
+    </style>
+    <script></script>
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="warp">
+    <div>
+        <h1><a href="../index.html">Alpha</a></h1>
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">javascript</a></li>
+                    <li><a href="#">css</a></li>
+                    <li><a href="#">jquery</a></li>
+                    <li><a href="#">angular</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="img">
+        <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
+    </div>
+    <hr>
+    <div class="warp text">
+        <h2><span>什么是JavaScript</span></h2>
+        <p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+        <p> 在1995年时，由Netscape公司的Brendan Eich，在网景导航者浏览器上首次设计实现而成。因为Netscape与Sun合作，Netscape管理层希望它外观看起来像Java，因此取名为JavaScript。但实际上它的语法风格与Self及Scheme较为接近。</p>
+        <p>为了取得技术优势，微软推出了JScript，CEnvi推出ScriptEase，与JavaScript同样可在浏览器上运行。为了统一规格，因为JavaScript兼容于ECMA标准，因此也称为ECMAScript。
+        </p>
+        <p>
+            JavaScript是一种属于网络的脚本语言,已经被广泛用于Web应用开发,常用来为网页添加各式各样的动态功能,为用户提供更流畅美观的浏览效果。通常JavaScript脚本是通过嵌入在HTML中来实现自身的功能的。
+        </p>
+    </div>
+    <hr>
+    <div class="footer">
+        <div>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        <div class="footer-bottom">
+            <p>这是一段内容</p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

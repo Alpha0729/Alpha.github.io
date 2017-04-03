@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpha-欢迎您</title>
+    <link rel="shortcut icon" href="../icon/title.ico"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+
+        .footer img{
+            margin:20px;
+            width: 40px;
+            height: 40px;background-color: #ccc;}
+        .footer .footer-bottom{text-align:center;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".navbar-nav li").click(function () {
+                $(".nav li").each(function () {
+                    $(".nav li").attr('class','');
+                });
+                $(this).attr('class','active');
+            })
+        })
+    </script>
+    <style>
+        h2{text-align:center;}
+
+        h2 span{
+            margin:0 auto;padding:20px 0;}
+        p{text-indent:2em;}
+        .text{line-height: 24px;width: 70%;background-color: #f5f5f5;margin: auto;}
+        .sort{border:1px solid #000;}
+        body{font-size:14px;}
+    </style>
+    <script></script>
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="warp">
+    <div>
+        <h1><a href="../index.html">Alpha</a></h1>
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">javascript</a></li>
+                    <li><a href="#">css</a></li>
+                    <li><a href="#">jquery</a></li>
+                    <li><a href="#">angular</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="img">
+        <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
+    </div>
+    <hr>
+    <div class="warp text">
+        <h2><span>JS数组排序</span></h2>
+        <div>
+            <p>1.利用js内置的sort对象进行排序：</p>
+            <p>例如一组数组：<span id="span">8,5,7,6,9,0,1</span></p>
+            <p>
+                <input type="button" value="从小到大" id="btn">
+                <input type="button" value="从大到小" id="btn2">
+            </p>
+            <p id="cont">从小到大排序：</p>
+            <p>注：默认是从小到大,a-b，相反b-a</p>
+        </div>
+        <div>
+            <p>sort的JS代码：</p>
+            <pre class="sort">
+                window.onload=function(){<br>
+                var oBtn=document.getElementById('btn');<br>
+                var oCont=document.getElementById('cont');<br>
+                var oSpan=document.getElementById('span');<br>
+                var oBtn2=document.getElementById('btn2');<br>
+                //获取页面上的内容（也就是数组）
+                var oS=oSpan.innerText;<br>
+                //split：用","号切割成数组；
+                var arr=oS.split(',');<br>
+                function sort(){<br>
+                //用sort()方法进行排序；
+                return arr.sort(function(a,b){<br>
+                return a-b;<br>
+                })<br>
+                };<br>
+                function sort2(){<br>
+                return arr.sort(function(a,b){<br>
+                return b-a;<br>
+                })<br>
+                };<br>
+                oBtn.onclick= function () {<br>
+                //插入到页面中
+                oCont.innerHTML='从小到大排序：'+'<b>'+sort()+'</b>';<br>
+                };<br>
+                oBtn2.onclick= function () {
+                oCont.innerHTML='从大到小排序：'+'<b>'+sort2()+'</b>';
+                };
+                };
+            </pre>
+        </div>
+        <div>
+            2.换位排序：
+            <p>1.我为什么叫它换位排序，因为它确实是在换位：</p>
+            <p>例如一组数组：<span id="span2">8,5,-1,7,6,9,-1,0,1</span></p>
+            <p>
+                <input type="button" value="从小到大" id="btn-1">
+                <input type="button" value="从大到小" id="btn-2">
+            </p>
+            <p id="cont2">从小到大排序：</p>
+            <p>JS代码：</p>
+            <pre>
+        var oBtnA=document.getElementById('btn-1');
+        var oCont2=document.getElementById('cont2');
+        var oSpan2=document.getElementById('span2');
+        var oBtnB=document.getElementById('btn-2');
+        var oS2=oSpan2.innerText;
+        var arr2=oS2.split(',');
+        function fn(T){
+            var max=arr2[T];
+            for(var j=T;j< arr2.length;j++){
+                //小于号是从小到大
+                if(arr2[j]<=max){
+                    //找到数组中的最小书的下角标;
+                    max=arr2[j];
+                    //8,5,-1,7,6,9,0,-1,1
+                    var w=j;
+                    /*切记return 只能放在函数最底层*/
+                }
+            }
+            //返回出去下角标；
+            return w;
+        }
+        function Example(){
+            for(var i=0;i< arr2.length;i++){
+                //拿回来的下角标赋给 n
+                var n=fn(i);
+                //让arr的第i++个先赋给m；
+                var m=arr2[i];
+                //然后把数组中的第n个，也就是最那回来的n赋给arr的第i++个；
+                arr2[i]=arr2[n];
+                //在把刚才的m给arr的第n个，这样刚好做到互换；
+                arr2[n]=m;
+            }
+            return arr2;
+        };
+                oBtnA.onclick= function () {
+            oCont2.innerHTML="从小到大排序："+'<b>'+ Example()+'</b>';
+        };
+            </pre>
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        <div>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        <div class="footer-bottom">
+            <p><a href="#">回到顶部</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload=function(){
+        var oBtn=document.getElementById('btn');
+        var oCont=document.getElementById('cont');
+        var oSpan=document.getElementById('span');
+        var oBtn2=document.getElementById('btn2');
+        var oS=oSpan.innerText;
+        var arr=oS.split(',');
+        function sort(){
+            return arr.sort(function(a,b){
+                return a-b;
+            })
+        };
+        function sort2(){
+            return arr.sort(function(a,b){
+                return b-a;
+            })
+        };
+        oBtn.onclick= function () {
+            oCont.innerHTML='从小到大排序：'+'<b>'+sort()+'</b>';
+        };
+        oBtn2.onclick= function () {
+            oCont.innerHTML='从大到小排序：'+'<b>'+sort2()+'</b>';
+        };
+        /*---------------*/
+        var oBtnA=document.getElementById('btn-1');
+        var oCont2=document.getElementById('cont2');
+        var oSpan2=document.getElementById('span2');
+        var oBtnB=document.getElementById('btn-2');
+        var oS2=oSpan2.innerText;
+        var arr2=oS2.split(',');
+        function fn(T){
+            var max=arr2[T];
+            for(var j=T;j<arr2.length;j++){
+                //小于号是从小到大
+                if(arr2[j]<=max){
+                    //找到数组中的最小书的下角标;
+                    max=arr2[j];
+                    //8,5,-1,7,6,9,0,-1,1
+                    var w=j;
+                    /*切记return 只能放在函数最底层*/
+                }
+            }
+            //返回出去下角标；
+            return w;
+        }
+        function Example(){
+            for(var i=0;i<arr2.length;i++){
+                //拿回来的下角标赋给 n
+                var n=fn(i);
+                //让arr的第i++个先赋给m；
+                var m=arr2[i];
+                //然后把数组中的第n个，也就是最那回来的n赋给arr的第i++个；
+                arr2[i]=arr2[n];
+                //在把刚才的m给arr的第n个，这样刚好做到互换；
+                arr2[n]=m;
+            }
+            return arr2;
+        };
+        function fn2(T){
+            var max=arr2[T];
+            for(var j=T;j<arr2.length;j++){
+                //大于号是从大到小
+                if(arr2[j]>=max){
+                    //找到数组中的最小书的下角标;
+                    max=arr2[j];
+                    //8,5,-1,7,6,9,0,-1,1
+                    var w=j;
+                    /*切记return 只能放在函数最底层*/
+                }
+            }
+            //返回出去下角标；
+            return w;
+        }
+        function Example2(){
+            for(var i=0;i<arr2.length;i++){
+                //拿回来的下角标赋给 n
+                var n=fn2(i);
+                //让arr的第i++个先赋给m；
+                var m=arr2[i];
+                //然后把数组中的第n个，也就是最那回来的n赋给arr的第i++个；
+                arr2[i]=arr2[n];
+                //在把刚才的m给arr的第n个，这样刚好做到互换；
+                arr2[n]=m;
+            }
+            return arr2;
+        };
+        oBtnA.onclick= function () {
+            oCont2.innerHTML="从小到大排序："+'<b>'+ Example()+'</b>';
+        };
+        oBtnB.onclick= function () {
+            oCont2.innerHTML="从大到小排序："+'<b>'+ Example2()+'</b>';
+        }
+    };
+</script>
+</body>
+</html>
