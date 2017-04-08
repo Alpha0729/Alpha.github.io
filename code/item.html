@@ -18,13 +18,13 @@
             //var fts=document.body.style.fontSize=16+"px";
            // alert(fts)
 
-            (function(win,doc){
+            /*(function(win,doc){
                 win.addEventListener('resize',change,false);
                 function change(){
                     doc.documentElement.style.fontSize=doc.documentElement.clientWidth/320+'%';
              }
                 change();
-            })(window,document)
+            })(window,document)*/
 
         }
 
@@ -43,3 +43,8 @@
 </div>
 </body>
 </html>
+<script>
+    window.onresize= function () {
+        alert(1)
+    }
+</script>

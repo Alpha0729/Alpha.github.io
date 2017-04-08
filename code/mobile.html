@@ -3,24 +3,21 @@
 <head>
     <meta charset="utf-8">
     <title>Alpha-欢迎您</title>
-    <link rel="shortcut icon" href="icon/title.ico"/>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="../icon/title.ico"/>
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../js/index.js">
     <style>
         .content{
             width: 80%;margin: auto}
+        h3{
+            width: 100%;text-align: center;}
+
     </style>
     <script>
-        $(document).ready(function(){
-            $(".navbar-nav li").click(function () {
-                $(".nav li").each(function () {
-                    $(".nav li").attr('class','');
-                });
-                $(this).attr('class','active');
-            })
-        })
+
     </script>
 </head>
 <body>
@@ -53,19 +50,27 @@
         </div>
     </nav>
     <div class="img">
-        <img src="images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
+        <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
     </div>
     <hr>
     <div class="content">
-        <p>
-            <a href="code/javascript.html">什么是JavaScript</a>
-        </p>
-        <p>
-            <a href="code/arr-repeat.html">JavaScript数组排序和数组去重</a>
-        </p>
-        <p>
-            <a href="code/mobile.html">移动端必用</a>
-        </p>
+        <h3><span>移动端常用语法</span></h3>
+        <p>添加下面标签页使面自由缩放：</p>
+        <pre>< meta name="viewport" content="width=device-width, initial-scale=1"></pre>
+        <p>用JS使页面font-size：按比例显示：</p>
+        <pre>
+            (function(win,doc){
+                //  resize就是onresize事件;  当页面窗口没改变时触发该事件
+                win.addEventListener('resize',change,false);
+                function change(){
+                    //以320屏幕为基础  也就是屏幕的宽度乘以20  是html的初始字体大小
+                    doc.documentElement.style.fontSize=doc.documentElement.clientWidth/320*20+'px';
+             }
+                change();
+            })(window,document)
+
+            *****使用rem的时候移动要除以20  因为默认字体是20px;
+        </pre>
     </div>
     <hr>
     <div class="footer">
