@@ -5,10 +5,11 @@
     <title>Alpha-欢迎您</title>
     <link rel="shortcut icon" href="../icon/title.ico"/>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../js/index.js">
+    <link rel="stylesheet" href="../css/bootstrap3.3.7.min.css">
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap3.3.7.min.js"></script>
+    <script src="../js/index.js"></script>
     <style>
         .content{
             width: 80%;margin: auto}
@@ -59,7 +60,7 @@
             <p>1.AJAX 是与服务器交换数据的技术，它在不重载全部页面的情况下，实现了对部分网页的更新。</p>
             <p style="padding-left: 10px;">get:容量小（4k-10k）不适合密码提交,不适合大文件传输,适合用于网页分享,get是有本地缓存的</p>
             <p style="padding-left: 10px;">post:容量大(2G)，相对get,比较安全,post是没有缓存的</p>
-            <p>2.jquery的get(url,fn)方法：url:请求的API,fn：请求成功时回调的函数</p>
+            <p>2.jquery的<b>get</b>(url,fn)方法：url:请求的API,fn：请求成功时回调的函数</p>
         <pre>
         $(document).ready(function () {
             $("#btn").click(function () {
@@ -72,17 +73,44 @@
             })
         });
         </pre>
-            <p><input type="button" value="点击" id="btn"></p>
+            <p><input class="btn btn-info" disabled  type="button" value="没有服务器无法使用" id="btn"></p>
         </div>
 
         <div>
-            <p>3.jquery的post(url,data,fn):url:请求地址;data:要传送的数据;fn：成功回调函数</p>
+            <p>3.jquery的<b>post</b>(url,data,fn):url:请求地址;data:要传送的数据;fn：成功回调函数</p>
             <pre>
-
+            $(document).ready(function () {
+                $("#btn2").click(function () {
+                    $.post("../text/1.php",{name:"liu",value:'18'}, function (data,status) {
+                        alert(data+":"+status)
+                    });
+                });
+            });
             </pre>
             <p>
-                <input type="button" value="点击" id="btn2" >
+                <input class="btn btn-info" disabled type="button" value="没有服务器无法使用" id="btn2" >
             </p>
+        </div>
+        <div>
+            <p>4.angular.js的get/post通用方法：</p>
+            <pre>
+            var app = angular.module('myApp', []);
+                //controller控制器 siteCtrl是控制器名字;
+            app.controller('siteCtrl', function($scope, $http) {
+                $http({
+                //根据需要修改不同的请求方式
+                method: 'GET',
+                url: '../text/1.text'
+                }).then(function successCallback(response) {
+                    //数据请求成功执行的代码
+                $scope.names = response.data.sites;
+
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+
+            });
+            </pre>
         </div>
         <div id="get"></div>
 
