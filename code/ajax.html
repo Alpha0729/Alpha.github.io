@@ -56,8 +56,11 @@
     <div class="content">
         <h3>ajax数据交互</h3>
         <p>1.AJAX 是与服务器交换数据的技术，它在不重载全部页面的情况下，实现了对部分网页的更新。</p>
+            <p style="padding-left: 10px;">get:容量小（4k-10k）不适合密码提交,不适合大文件传输,适合用于网页分享,get是有本地缓存的</p>
+        <p style="padding-left: 10px;">post:容量大(2G)，相对get,比较安全,post是没有缓存的</p>
         <p>2.jquery的get方法：</p>
         <p><input type="button" value="点击" id="btn"></p>
+        <div id="get"></div>
 
     </div>
     <hr>
@@ -81,8 +84,8 @@
 <script>
     $(document).ready(function () {
         $("#btn").click(function () {
-            $.get('../text/1.php', function (data,status) {
-                alert(data+":"+status)
+            $.get('../text/1.text', function (data,status) {
+                alert("请求到的数据："+data+":成功状态"+status)
             });
         })
     });
