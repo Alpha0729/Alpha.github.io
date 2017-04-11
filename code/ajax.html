@@ -111,6 +111,26 @@
 
             });
             </pre>
+            <p>angular中的get方法：</p>
+            <pre>
+            var app = angular.module('myApp', []);
+                app.controller('siteCtrl', function($scope, $http) {
+                  $http.get("url地址")
+                    //data后面跟着是个json数组，  i sites是数组的name
+                //***json数组一定要用“双引号”
+                  .then(function (response) {$scope.names = response.data.sites;});
+            });
+            </pre>
+            <p>angular中的post方法：</p>
+            <pre>
+            var app = angular.module('myApp', []);
+                app.controller('siteCtrl', function($scope, $http) {
+                  $http.post("url地址")
+                    //data后面跟着是个json数组，  i sites是数组的name
+                //***json数组一定要用“双引号”
+                  .then(function (response) {$scope.names = response.data.sites;});
+            });
+            </pre>
         </div>
         <div id="get"></div>
 

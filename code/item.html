@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/angular1.6.3.min.js"></script>
     <title>Title</title>
     <style>
         /*html,body{font-size: 62.5%}*/
@@ -13,21 +14,17 @@
     </style>
     <script></script>
     <script>
-        window.onload= function () {
-           //var fts=document.body.style.fontSize=(62.5)+"%";
-            //var fts=document.body.style.fontSize=16+"px";
-           // alert(fts)
-
-            /*(function(win,doc){
+       /* window.onload= function () {
+            /!*(function(win,doc){
                 win.addEventListener('resize',change,false);
                 function change(){
                     doc.documentElement.style.fontSize=doc.documentElement.clientWidth/320+'%';
              }
                 change();
-            })(window,document)*/
+            })(window,document)*!/
 
         }
-
+*/
     </script>
 </head>
 <body>
@@ -41,8 +38,19 @@
     <img src="" alt="">
     <img src="" alt="">
 </div>
+<div ng-app="myApp" ng-controller="chengle">
+    {{names.name}}
+</div>
 </body>
 </html>
 <script>
-    document.write(location.host)
+    var app= angular.module('myApp',[]);
+    app.controller('chengle',function($scope,$http){
+        $http.post("../text/2.php",123).then(function(response){
+            console.log(response);
+            $scope.names=eval(response.data);
+        }, function (err) {
+            alert("错误")
+        })
+    })
 </script>
