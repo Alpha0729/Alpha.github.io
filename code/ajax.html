@@ -98,7 +98,7 @@
                 //controller控制器 siteCtrl是控制器名字;
             app.controller('siteCtrl', function($scope, $http) {
                 $http({
-                //根据需要修改不同的请求方式
+                //根据需要修改不同的GET或POST请求方式
                 method: 'GET',
                 url: '../text/1.text'
                 }).then(function successCallback(response) {

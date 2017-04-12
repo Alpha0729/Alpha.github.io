@@ -3,36 +3,32 @@
 <head>
     <meta charset="utf-8">
     <title>Alpha-欢迎您</title>
-    <link rel="shortcut icon" href="icon/title.ico"/>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/bootstrap3.3.7.min.css">
+    <link rel="shortcut icon" href="../icon/title.ico"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap3.3.7.min.css">
 
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap3.3.7.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap3.3.7.min.js"></script>
+    <script src="../js/index.js"></script>
     <style>
         .content{
-            width: 80%;margin: auto;}
-        html body{font-size:18px;}
+            width: 80%;margin: auto}
+        h3{
+            width: 100%;text-align: center;}
+        p,pre{font-size: 16px;}
+
     </style>
     <script>
-        $(document).ready(function(){
-            $(".navbar-nav li").click(function () {
-                $(".nav li").each(function () {
-                    $(".nav li").attr('class','');
-                });
-                $(this).attr('class','active');
-            })
-        })
+
     </script>
 </head>
 <body>
 
 <div class="warp">
     <div>
-        <h1><a href="javascript:;">Alpha</a></h1>
+        <h1><a href="../index.html">Alpha</a></h1>
     </div>
-    <nav class="navbar navbar-default"  role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -56,21 +52,29 @@
         </div>
     </nav>
     <div class="img">
-        <img src="images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
+        <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
     </div>
     <hr>
     <div class="content">
-        <p>
-            <a href="code/javascript.html">什么是JavaScript</a>
-        </p>
-        <p>
-            <a href="code/arr-repeat.html">JavaScript数组排序和数组去重</a>
-        </p>
-        <p>
-            <a href="code/mobile.html">移动端必用</a>
-        </p>
-        <p><a href="code/ajax.html">ajax数据交互:jquery和angular</a></p>
-        <p><a href="code/string.html">javaScript的字符操作</a></p>
+        <h3>常用字符串操作</h3>
+        <p>charAt()方法:str="Hollow"</p>
+         <pre>
+         str.charAt(1)返回str数组的“o”从左往右开始.
+</pre>
+        <p>concat()方法:str="Hollow",str2="Hollow2"</p>
+         <pre>
+         str.concat(str2)连接两个或更多字符串，并返回新的字符串。
+</pre>
+        <p>indexOf()方法:str="Hollow"</p>
+         <pre>
+         str.indexOf("需要查找字符串")方法可返回某个指定的字符串值在字符串中"首次出现的位置"。
+        如果没有找到匹配的字符串则返回 -1。**indexOf() 方法区分大小写。
+</pre>
+        <p>slice()方法:str="Hollow"</p>
+         <pre>
+         str.slice(开始位置,结束位置) 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+         如果添写一个参数:那就是从该位置截取到最后;
+</pre>
     </div>
     <hr>
     <div class="footer">
