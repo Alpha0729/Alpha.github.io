@@ -15,16 +15,17 @@
     <script></script>
     <script>
         window.onload= function () {
-        var oA=document.getElementById('asdf');
-            oA.oncontextmenu=function(){
-                alert(1)
-                return false;
-            }
-                function myFunction() {
-                alert("你在 div 元素总点击鼠标了右键。");
-            }
 
-            alert(str);
+               window.onpagehide= function () {
+                   alert("1")
+               };
+            /*function fn(ev){
+                var x = ev.which || ev.keyCode;  // 使用 which 或 keyCode, 这样可支持不同浏览器
+                return x;
+            }
+            document.onkeydown= function () {
+                alert(fn())
+            };*/
             //str.indexOf("")
             /*(function(win,doc){
                 win.addEventListener('resize',change,false);
@@ -39,7 +40,7 @@
 </head>
 <body>
 <div id="asdf">123</div>
-<h1>我是个表头</h1>
+<h1><a href="#">我是个表头</a></h1>
 <p style="text-indent: 2em">拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了；放</p>
 <div>
     <img src="" alt="">
@@ -63,7 +64,7 @@
     var app= angular.module('myApp',[]);
     app.controller('chengle',function($scope,$http){
         $http.post("../text/2.php",123).then(function(response){
-            console.log(response);
+            //console.log(response);
             $scope.names=eval(response.data);
         }, function (err) {
             alert("错误")

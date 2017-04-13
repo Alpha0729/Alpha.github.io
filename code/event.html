@@ -57,13 +57,96 @@
     <div class="content">
         <h3>各种事件对象</h3>
         <div>
-            事件绑定
+            <b>鼠标事件：</b>
         </div>
         <div>
-            <p>oncontextmenu鼠标右击触发该事件</p>
+            <p>1.oncontextmenu鼠标右击触发该事件</p>
             <pre>
                 object.oncontextmenu=function(){myCode};
 </pre>
+        </div>
+        <div>
+            <p>2.ondblclick鼠标双击击触发该事件</p>
+            <pre>
+                object.ondblclick=function(){SomeJavaScriptCode};
+</pre>
+        </div>
+        <div>
+            <p>3.onmousedown鼠标按下时触发该事件</p>
+            <pre>
+                object.onmousedown=function(){SomeJavaScriptCode};
+</pre>
+        </div>
+        <div>
+            <p>4.onmouseup鼠标松开时触发该事件</p>
+            <pre>
+                object.onmouseup=function(){SomeJavaScriptCode};
+</pre>
+        </div>
+        <div>
+            <p>5.onmouseenter 鼠标移动到某元素时触发该事件</p>
+            <pre>
+                object.onmouseenter =function(){SomeJavaScriptCode};
+                注意:onmouseenter 事件类似于 onmouseover 事件。 唯一的区别是 onmouseenter 事件不支持冒泡.
+                该事件通常与 onmouseleave 事件一同使用, 在鼠标指针移出元素上时触发。
+</pre>
+        </div>
+        <div>
+            <p>6. onmouseleave鼠标从某元素移开时触发该事件</p>
+            <pre>
+                object.onmouseleave=function(){SomeJavaScriptCode};
+</pre>
+        </div>
+        <div>
+            <b>键盘事件：</b>
+        </div>
+        <div>
+            <p>1.获取键码方法：</p>
+            <pre>
+            function fn(ev){
+                // 使用 which 或 keyCode, 这样可支持不同浏览器
+                var x = ev.which || ev.keyCode;
+                return x;
+            }
+            document.onkeydown= function () {
+                alert(fn())
+            };
+</pre>
+            <div>
+                <p>2.onkeydown 当按下键盘上某个键时触发该事件</p>
+            <pre>
+                object.onkeydown =function(){SomeJavaScriptCode};
+</pre>
+            </div>
+            <div>
+                <p>3.onkeyup 当松开键盘上某个键时触发该事件</p>
+            <pre>
+                object.onkeyup =function(){SomeJavaScriptCode};
+</pre>
+            </div>
+            <div>
+                <p>4.onkeypress 当按下并松开键盘上某个键时触发该事件</p>
+            <pre>
+                object.onkeypress =function(){SomeJavaScriptCode};
+</pre>
+            </div>
+        </div>
+        <div>
+            <b>其他常用事件对象:</b>
+            <div>
+                <p>1.onpageshow 事件在用户浏览网页时触发</p>
+            <pre>
+                object.onpageshow=function(){myCode};
+                **可以利用cookie过期时间来使用该事件
+</pre>
+            </div>
+            <div>
+                <p>2.onpagehide 事件在用户浏览网页时触发</p>
+            <pre>
+                object.onpagehide=function(){myCode};
+                **可以利用cookie过期时间来使用该事件
+</pre>
+            </div>
         </div>
     </div>
     <hr>
