@@ -57,23 +57,52 @@
     <hr>
     <div class="content">
         <h3>常用字符串操作</h3>
-        <p>charAt()方法:str="Hollow"</p>
+        <p>1.charAt()下角标查找字符串方法,例如:str="Hollow"</p>
          <pre>
-         str.charAt(1)返回str数组的“o”从左往右开始.
+         str.charAt(1),利用下角标查找字符串，答：返回str数组的“o”从左往右开始.
 </pre>
-        <p>concat()方法:str="Hollow",str2="Hollow2"</p>
+        <p>2.concat()字符串链接方法,例如:str="Hollow",str2="Hollow2"</p>
          <pre>
          str.concat(str2)连接两个或更多字符串，并返回新的字符串。
 </pre>
-        <p>indexOf()方法:str="Hollow"</p>
+        <p>3.indexOf()字符串查找方法,例如:str="Hollow"</p>
          <pre>
          str.indexOf("需要查找字符串")方法可返回某个指定的字符串值在字符串中"首次出现的位置"。
         如果没有找到匹配的字符串则返回 -1。**indexOf() 方法区分大小写。
 </pre>
-        <p>slice()方法:str="Hollow"</p>
+        <p>4.slice()截取字符串方法,例如:str="Hollow"</p>
          <pre>
          str.slice(开始位置,结束位置) 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。
          如果添写一个参数:那就是从该位置截取到最后;
+</pre>
+        <p>5.split()字符串分割成数组方法,例如:str="Hollow"</p>
+         <pre>
+         str.split("用什么符号或字符进行切分",分割个数)返回一个数组,“分割个数”，
+         例如：str.split("o",2),意思就是按“o”进行分割,分割一个返回[H,ll]
+         **里面的空格也可以当分割的条件;如果分割为空,会把字符串切碎;
+</pre>
+        <p>6.toLowerCase()转换成小写方法,例如:str="Hollow"</p>
+         <pre>
+         str.toLowerCase()将字符串转换成小写；
+</pre>
+        <p>7.toUpperCase()转换成大写方法,例如:str="Hollow"</p>
+         <pre>
+         str.toUpperCase()将字符串转换成大写；
+</pre>
+        <p>8.trim()去除字符串两边空格方法,例如:str="Hollow"</p>
+         <pre>
+         str.trim()该方法去除字符串两边的空白;
+         **特别提醒：" "空字符串是等于false,也就是空字符串是假的;( " " == false = true );
+</pre>
+        <p>9.sup()把字符串在页面上以上标显示,例如:str="Hollow"</p>
+         <pre>
+         str.sup()该方法:
+             例如：您好<span style="vertical-align:super;">Hollow</span>
+</pre>
+        <p>10.sub()把字符串在页面上以上标显示,例如:str="Hollow"</p>
+         <pre>
+         str.sub()该方法:
+             例如：您好<span style="vertical-align:sub;">Hollow</span>
 </pre>
     </div>
     <hr>
@@ -87,7 +116,7 @@
             <img src="" alt="">
         </div>
         <div class="footer-bottom">
-            <p>这是一段内容</p>
+            <p><a href="#">这是一段内容</a></p>
         </div>
     </div>
 </div>

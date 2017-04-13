@@ -15,9 +15,16 @@
     <script></script>
     <script>
         window.onload= function () {
-            var str="Hollow ";
-           var a=str.indexOf(" ");
-            alert(a);
+        var oA=document.getElementById('asdf');
+            oA.oncontextmenu=function(){
+                alert(1)
+                return false;
+            }
+                function myFunction() {
+                alert("你在 div 元素总点击鼠标了右键。");
+            }
+
+            alert(str);
             //str.indexOf("")
             /*(function(win,doc){
                 win.addEventListener('resize',change,false);
@@ -31,6 +38,7 @@
     </script>
 </head>
 <body>
+<div id="asdf">123</div>
 <h1>我是个表头</h1>
 <p style="text-indent: 2em">拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了拿上单反加拉丝的肌肤拉锯式的风口浪尖撒到了；放</p>
 <div>
@@ -40,6 +48,11 @@
     <img src="" alt="">
     <img src="" alt="">
     <img src="" alt="">
+
+
+    <pre>
+       <xmp><a href="#">sdfsdfdsfsd</a></xmp>
+    </pre>
 </div>
 <div ng-app="myApp" ng-controller="chengle">
     {{names.name}}
