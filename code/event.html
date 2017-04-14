@@ -203,10 +203,17 @@
 </pre>
             </div>
             <div>
-                <p>6.oncopy 该事件在元素被提交时触发</p>
+                <p>6.oncopy 该事件在 文本被复制时触发</p>
             <pre>
                 object.oncopy=function(){SomeJavaScriptCode};
-                **一般用在文本被放
+                **文本复制时触发该事件
+</pre>
+            </div>
+            <div>
+                <p>7.onpaste 该事件在粘贴时触发</p>
+            <pre>
+                object.onpaste=function(){SomeJavaScriptCode};
+                **一般用在输入框,粘贴在输入框时触发
 </pre>
             </div>
         </div>

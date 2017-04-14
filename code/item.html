@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../js/angular1.6.3.min.js"></script>
+    <!--<script src="../js/angular1.6.3.min.js"></script>-->
     <title>Title</title>
     <style>
         /*html,body{font-size: 62.5%}*/
@@ -14,36 +14,53 @@
     </style>
     <script></script>
     <script>
-        window.onload= function () {
-            var oP=document.getElementById('p');
+        /*window.onload= function () {
+            alert(1)
+            /!*var oP=document.getElementById('p');
             oP.oncopy= function () {
                 alert(1)
-            }
-            /*var oTxt=document.getElementById('txt');
+            }*!/
+            /!*var oTxt=document.getElementById('txt');
             oTxt.oninput= function () {
                 console.log(1)
-            }*/
+            }*!/
 
-            /*function fn(ev){
+            /!*function fn(ev){
                 var x = ev.which || ev.keyCode;  // 使用 which 或 keyCode, 这样可支持不同浏览器
                 return x;
             }
             document.onkeydown= function () {
                 alert(fn())
-            };*/
+            };*!/
             //str.indexOf("")
-            /*(function(win,doc){
+            /!*(function(win,doc){
                 win.addEventListener('resize',change,false);
                 function change(){
                     doc.documentElement.style.fontSize=doc.documentElement.clientWidth/320+'%';
              }
                 change();
-            })(window,document)*/
+            })(window,document)*!/
 
-        }
+        }*/
+
+            /*document.addEventListener('resize',change,false);
+
+            function change(){
+                var oMyDiv=document.getElementById('myDiv');
+                alert(oMyDiv)
+                var oMyP=document.getElementById('myp');
+                oMyDiv.addEventListener('click', function () {
+                    alert("DIV")
+                });
+            };
+            change()*/
+
     </script>
 </head>
 <body>
+<div style="background-color: red;" id="myDiv">2
+    <p id="myP" style="background-color: green;width: 100px;">1</p>
+</div>
 <input type="text"  id="txt" />
 <div id="div">123</div>
 <h1><a href="#">我是个表头</a></h1>
@@ -67,7 +84,7 @@
 </body>
 </html>
 <script>
-    var app= angular.module('myApp',[]);
+ /*   var app= angular.module('myApp',[]);
     app.controller('chengle',function($scope,$http){
         $http.post("../text/2.php",123).then(function(response){
             //console.log(response);
@@ -75,5 +92,20 @@
         }, function (err) {
             alert("错误")
         })
-    })
+    })*/
+
+
+            window.onload= function () {
+                var oMyDiv=document.getElementById('myDiv');
+                var oMyP=document.getElementById('myP');
+                oMyDiv.addEventListener('click', function(){
+                    alert("DIV")
+                    return false;
+                },false);
+                oMyP.addEventListener('click', function () {
+                    alert("P")
+
+                },false)
+
+            }
 </script>
