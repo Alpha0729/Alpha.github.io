@@ -13,8 +13,9 @@
     <style>
         .content{
             width: 80%;margin: auto}
-        h3{
-            width: 100%;text-align: center;}
+        /*h3{
+            width: 100%;text-align: center;padding: 30px 0;}*/
+        b{font-size:18px;}
 
     </style>
     <script>
@@ -141,10 +142,71 @@
 </pre>
             </div>
             <div>
-                <p>2.onpagehide 事件在用户浏览网页时触发</p>
+                <p>2.onresize 事件在用户浏览网页时触发</p>
             <pre>
-                object.onpagehide=function(){myCode};
-                **可以利用cookie过期时间来使用该事件
+                window.onresize=function(){SomeJavaScriptCode};
+                **所有标签都支持该事件；
+</pre>
+            </div>
+            <div>
+                <p>3.onscroll 事件在用户浏览网页时触发</p>
+            <pre>
+                object.onscroll=function(){myScript};
+                **所有标签都支持该事件；
+</pre>
+            </div>
+        </div>
+        <div>
+            <b>表单常用事件:</b>
+            <div>
+                <p>1.onblur 该事件在元素失去焦点时触发</p>
+            <pre>
+                object.onblur=function(){SomeJavaScriptCode};
+                **onblur 经常用于Javascript验证代码，一般用于表单输入框。
+</pre>
+            </div>
+            <div>
+                <p>2.oninput 该事件当元素值被改变时触发</p>
+            <pre>
+                object.oninput=function(){SomeJavaScriptCode};
+                注意:该事件和change有点类似,oninput会时时检测每一次改变的数据的改变;
+                而onchage则需要等输出结束并且失去焦点时触发;
+</pre>
+            </div>
+            <div>
+                <p>3.onfocu和onfocuout 事件 当元素"即将"获得或取消焦点时触发</p>
+            <pre>
+                object.onfocus=function(){myScript};
+                onfocus事件一般用于表单,当元素“即将”获取焦点的时候触发该事件,
+                意思并没有真正触发到元素。
+                object.onfocuout=function(){myScript};
+                onfocuout事件一般用于表单,当元素“即将”失去焦点的时候触发该事件
+                <b>注意</b>:onfocusout 事件类似于 onblur 事件。
+                主要的区别是 onblur 事件不支持冒泡。因此，如果你需要查看元素或其子元素是否获取焦点，需要使用 onfocusout 事件
+</pre>
+            </div>
+            <div>
+                <p>4.onchange 该事件当元素值被改变时触发</p>
+            <pre>
+                object.onchange=function(){SomeJavaScriptCode};
+                注意:该事件和onblur有点类似
+                例如：< input type="text"  id="txt" />
+                onchange:当input的value值被改变时<b>并且</b>鼠标移除了该元素,
+                onchange事件才能触
+</pre>
+            </div>
+            <div>
+                <p>5.onsubmit 该事件在元素被提交时触发</p>
+            <pre>
+                object.onsubmit=function(){SomeJavaScriptCode};
+                **该事件用在类型为 type="submit"< input type="submit" value="提交">
+</pre>
+            </div>
+            <div>
+                <p>6.oncopy 该事件在元素被提交时触发</p>
+            <pre>
+                object.oncopy=function(){SomeJavaScriptCode};
+                **一般用在文本被放
 </pre>
             </div>
         </div>
