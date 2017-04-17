@@ -13,7 +13,7 @@
         pre{width:20rem ;height: 80rem;}
     </style>
     <script></script>
-    <script>
+    <!--<script>
         /*window.onload= function () {
             alert(1)
             /!*var oP=document.getElementById('p');
@@ -55,7 +55,7 @@
             };
             change()*/
 
-    </script>
+    </script>-->
 </head>
 <body>
 <div style="background-color: red;" id="myDiv">2
@@ -93,19 +93,20 @@
             alert("错误")
         })
     })*/
-
-
-            window.onload= function () {
+          /*  window.onload= function () {
                 var oMyDiv=document.getElementById('myDiv');
                 var oMyP=document.getElementById('myP');
                 oMyDiv.addEventListener('click', function(){
-                    alert("DIV")
-                    return false;
+                    alert("DIV");
                 },false);
                 oMyP.addEventListener('click', function () {
                     alert("P")
 
                 },false)
 
-            }
+            }*/
+ window.addEventListener("load ",function(){
+     var oM=document.getElementById("myDiv");
+     alert(oM)
+ })
 </script>

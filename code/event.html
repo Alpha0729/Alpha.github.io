@@ -58,6 +58,30 @@
     <div class="content">
         <h3>各种事件对象</h3>
         <div>
+            <p>事件绑定和event</p>
+            <pre>
+            //object.addEventListener('事件',fn，false)
+            object.addEventListener("事件名称 ",function(ev){
+                ////在低版本的chrome和firefox浏览器中需要兼容性处理
+                var oEvent=ev ||event;
+                //阻止冒泡
+                oEvent.stopPropagation();
+             },false);
+            //false表示:事件冒泡;true:捕获;
+            事件冒泡和捕获区别:
+            事件冒泡:内部元素的事件会先被触发，然后再触发外部元素.
+            事件捕获:外部元素的事件会先被触发，然后才会触发内部元素的事件;
+            **事件绑定的好处：一个元素可以触多个事件,不会被覆盖;
+            **事件绑定不支持IE8以及以下版本
+            //阻止事件冒泡行为:
+            event.stopPropagation();
+            </pre>
+            <p>移除事件绑定</p>
+            <pre>
+             object.removeEventListener("事件名称", 要移除的方法函数)
+            </pre>
+        </div>
+        <div>
             <b>鼠标事件：</b>
         </div>
         <div>
@@ -142,14 +166,14 @@
 </pre>
             </div>
             <div>
-                <p>2.onresize 事件在用户浏览网页时触发</p>
+                <p>2.onresize 事件在用户改变窗口大小时触发</p>
             <pre>
                 window.onresize=function(){SomeJavaScriptCode};
                 **所有标签都支持该事件；
 </pre>
             </div>
             <div>
-                <p>3.onscroll 事件在用户浏览网页时触发</p>
+                <p>3.onscroll 事件当用户滚动 滚动条时触发</p>
             <pre>
                 object.onscroll=function(){myScript};
                 **所有标签都支持该事件；
