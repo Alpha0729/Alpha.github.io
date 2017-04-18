@@ -62,7 +62,61 @@
     </div>
 
     <div class="content">
+        <h3>
+            <span>
+            jquery的ajax方法
+            </span>
+        </h3>
+        <div>
+            <p><b>1.ajaxStart()和ajaxSend()</b></p>
+            <pre>
+        ajaxStart() 当前第一个AJAX请求开始时执行该函数。
 
+        ajaxSend()  当AJAX请求被发送之前执行该函数。
+</pre>
+        </div>
+        <div>
+            <p><b>2.ajaxSuccess()、ajaxComplete()和ajaxStop()</b></p>
+            <pre>
+        ajaxSuccess() 当请求成功时调用函数，即status==200;。
+
+        ajaxComplete() 设置当AJAX请求完成(无论成功或失败)时执行的处理函数。
+
+        ajaxStop() 检查是否存在更多的 AJAX 请求。如果没有其他请求,则运行该函数;
+</pre>
+        </div>
+        <div>
+            <p><b>3.ajaxError() </b></p>
+            <pre>
+        ajaxError() 方法规定 AJAX 请求失败时运行的函数。
+</pre>
+        </div>
+        <div>
+            <p><b>4.load()方法从服务器加载数据，并把返回的数据放置到指定的元素中</b></p>
+            <pre>
+         $("选择器").load(url,data,function(response,status,xhr))
+         **url	必需。规定您需要加载的 URL。
+         **data	可选。规定连同请求发送到服务器的数据。
+         **fn(response,status,xhr)
+                response - 包含来自请求的结果数据
+                status - 包含请求的状态（"success"、"notmodified"、"error"、"timeout"、"parsererror"）
+                xhr - 包含 XMLHttpRequest 对象
+</pre>
+        </div>
+        <div>
+            <p><b>5.ajax() 方法用于执行 AJAX（异步 HTTP）请求,用法:</b></p>
+            <pre>
+        //例子:
+        $("button").click(function(){
+            $.ajax({url:"1.txt",success:function(result){
+                //result返回的结果;
+            $("#div1").html(result);
+            }});
+        });
+        $.ajax({name:value, name:value, ... })
+        更多详细: <a href="http://www.runoob.com/jquery/ajax-ajax.html">点击</a>
+</pre>
+        </div>
     </div>
     <hr>
     <div class="footer">

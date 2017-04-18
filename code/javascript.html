@@ -73,6 +73,13 @@
         <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
     </div>
     <hr>
+    <!--返回顶部箭头-->
+    <div id="top" style="width: 50px;height: 50px;background-color: #999;position: fixed;right: 50px;bottom:50px;text-align: center;line-height: 50px;display: none;">
+        <b>
+            <a style="text-decoration:none;color:#fff;;" href="javascript:;">顶部</a>
+        </b>
+    </div>
+
     <div class="warp text">
         <h2><span>什么是JavaScript</span></h2>
         <p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
@@ -102,3 +109,19 @@
 
 </body>
 </html>
+<script>
+    window.addEventListener('scroll', function () {
+        var oTop=document.getElementById('top');
+        var oH=document.documentElement.clientHeight;
+        var oS=document.body.scrollTop;
+        if(oH+oS>oH){
+            oTop.style.display="block";
+
+        }else {
+            oTop.style.display="none";
+        }
+        oTop.onclick= function () {
+            document.body.scrollTop=0;
+        }
+    },false);
+</script>

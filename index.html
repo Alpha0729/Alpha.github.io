@@ -60,6 +60,12 @@
         <img src="images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
     </div>
     <hr>
+    <!--返回顶部箭头-->
+    <div id="top" style="width: 50px;height: 50px;background-color: #999;position: fixed;right: 50px;bottom:50px;text-align: center;line-height: 50px;display: none;">
+        <b>
+            <a style="text-decoration:none;color:#fff;;" href="javascript:;">顶部</a>
+        </b>
+    </div>
     <div class="content">
         <p>
             <a href="code/javascript.html">什么是JavaScript</a>
@@ -70,9 +76,10 @@
         <p>
             <a href="code/mobile.html">移动端必用</a>
         </p>
-        <p><a href="code/ajax.html">ajax数据交互:jquery和angular</a></p>
+        <p><a href="code/get%20and%20post.html">get和post数据交互:jquery和angular</a></p>
         <p><a href="code/string.html">javaScript的字符操作</a></p>
         <p><a href="code/event.html">JS的各个事件(event)对象</a></p>
+        <p><a href="code/jQuery-ajax.html">jQuery的ajax各种方法</a></p>
     </div>
     <hr>
     <div class="footer">
@@ -92,3 +99,19 @@
 
 </body>
 </html>
+<script>
+    window.addEventListener('scroll', function () {
+        var oTop=document.getElementById('top');
+        var oH=document.documentElement.clientHeight;
+        var oS=document.body.scrollTop;
+        if(oH+oS>oH){
+            oTop.style.display="block";
+
+        }else {
+            oTop.style.display="none";
+        }
+        oTop.onclick= function () {
+            document.body.scrollTop=0;
+        }
+    },false);
+</script>
