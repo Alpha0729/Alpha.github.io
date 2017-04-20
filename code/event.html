@@ -82,6 +82,13 @@
             **事件绑定不支持IE8以及以下版本
             //阻止事件冒泡行为:
             event.stopPropagation();
+
+            <b>***************特别重要，DOMContentLoaded</b>可以代替onload事件;
+            DOMContentLoaded ：它的意思是：等DOM树构建完成后执行的事件,没必要等页面全部加载完成;
+            document.addEventListener("DOMContentLoaded", function() {
+                 // ...代码...
+            }, false);
+
             </pre>
             <p>移除事件绑定</p>
             <pre>

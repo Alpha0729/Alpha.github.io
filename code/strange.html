@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Alpha-欢迎您</title>
+    <link rel="shortcut icon" href="../icon/title.ico"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap3.3.7.min.css">
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap3.3.7.min.js"></script>
+    <script src="../js/index.js"></script>
+    <style>
+        .content{
+            width: 80%;margin: auto}
+
+        h3{
+            width: 100%;text-align: center;}
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+
+<div class="warp">
+    <div>
+        <h1><a href="../index.html">Alpha</a></h1>
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">javascript</a></li>
+                    <li><a href="#">css</a></li>
+                    <li><a href="#">jquery</a></li>
+                    <li><a href="#">angular</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="img">
+        <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
+    </div>
+    <hr>
+    <!--返回顶部箭头-->
+    <div id="top" style="width: 50px;height: 50px;background-color: #999;position: fixed;right: 50px;bottom:50px;text-align: center;line-height: 50px;display: none;">
+        <b>
+            <a style="text-decoration:none;color:#fff;;" href="javascript:;">顶部</a>
+        </b>
+    </div>
+    <!--content主要内容-->
+    <div class="content">
+        <h3>前端中不能理解的东西</h3>
+        <div>
+            <p><b>1.什么是空元素？</b></p>
+            <pre>
+        w3c是怎么定义的:没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。
+
+        个人感觉特别难理解,最终得出结论就是：没有闭合标签的元素都是空元素,简单的说就是还没开始
+
+        就已经结束了;意思就是闭合标签的斜杠(/)放在最后都是空标签
+
+            例如:< br />、< input />、< img s/>、< hr />
+            </pre>
+        </div>
+        <div>
+            <p><b>2.link和import的区别</b></p>
+            <pre>
+        区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务,@import属于CSS范畴，只能加载CSS。
+
+        区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。
+
+        区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。
+
+        区别4：link支持使用Javascript控制DOM去改变样式；而@import不支持。
+               @import使用：
+                < style>
+                  @import url("url地址")
+                < /style>
+            </pre>
+        </div>
+        <div>
+            <p><b>3.onload和ready的区别</b></p>
+            <pre>
+        js的window.onload事件是：等页面完全加载完之后在进行加载;
+
+        而jquery的ready怎么是只需要等DOM树构建完成时,则执行ready,没必要等图片或其他外部文件加载完成;
+                (ready:原型DOMContentLoaded)
+        DOM文档加载的步骤为
+
+            1.解析HTML结构。
+            2.加载外部脚本和样式表文件。
+            3.解析并执行脚本代码。
+            4.DOM树构建完成。//DOMContentLoaded
+            5.加载图片等外部文件。
+            6.页面加载完毕。//load
+            </pre>
+        </div>
+        <div>
+            <p><b>4.window和document的区别</b></p>
+            <pre>
+        window的w3c定义:Window 对象表示浏览器中打开的窗口,即：当你打开一个页面时就生成了一个window对象；
+
+        document的w3c定义：每个载入浏览器的 HTML 文档都会成为 Document 对象,即：有html文档头时会生成document对象。
+            </pre>
+        </div>
+        <div>
+            <p><b>1.浏览器内核</b></p>
+            <pre>
+            浏览器内核也就是指的是“渲染引擎”，主要分成两部分：渲染引擎和JS引擎。
+            渲染引擎：负责取得网页的内容(HTML、XML、图像等等)、整理讯息(例如加入CSS等)，以及计算网页的显示方式。
+            **浏览器内核的不同,对于网页的语法解析会有不同,因浏览器渲染方式不同，渲染出的结果也会有差异;因此会出现兼容问题;
+            JS引擎则：解析和执行javascript来实现网页的动态效果。
+            ***浏览内核:
+                IE浏览器的内核Trident、 Mozilla(火狐)的Gecko、google(谷歌)的WebKit、Opera内核Presto;
+            </pre>
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        <div>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        <div class="footer-bottom">
+            <p>这是一段内容</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    window.addEventListener('scroll', function () {
+        var oTop=document.getElementById('top');
+        var oH=document.documentElement.clientHeight;
+        var oS=document.body.scrollTop;
+        if(oH+oS>oH){
+            oTop.style.display="block";
+
+        }else {
+            oTop.style.display="none";
+        }
+        oTop.onclick= function () {
+            document.body.scrollTop=0;
+        }
+    },false);
+</script>
