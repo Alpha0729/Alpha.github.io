@@ -30,15 +30,15 @@
             }
         },false)*/
 
-        $(document).ready(function () {
+        /*$(document).ready(function () {
             var li=$("ul li");
             console.log(li.bind())
             li.bind("click", function () {
                 alert(1)
             });
                 }
-        );
-    </script>
+        );*/
+           </script>
     <!--<script>
         window.onload= function () {
             var a= function () {
@@ -51,19 +51,38 @@
            new a()
         }
     </script>-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var oUl=document.getElementById('ul');
+            var aLi=oUl.getElementsByTagName('li')[0];
+            oUl.addEventListener("click", function (ev) {
+                var oEvent=ev.target||ev.srcElement;
+                console.log(oEvent.nodeName)
+                if(oEvent.nodeName.toLowerCase()=="li"){
+                    oEvent.style.background = "red";
+                }
+            });
+        },false)
+
+    </script>
 </head>
 <body>
 <div id="div">
     <p id="p"></p>
 </div>
-<ul>
+<ul id="ul">
     <li id="li">111</li>
+    <b>123dfsdfas</b>
     <li>222</li>
     <li>333</li>
     <li>444</li>
     <li>555</li>
 </ul>
+
 </body>
 </html>
 <script>
+    var Date=new Date();
+    document.cookie="name=liu;expires="+Date;
+    alert(document.cookie)
 </script>

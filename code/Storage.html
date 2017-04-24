@@ -3,41 +3,38 @@
 <head>
     <meta charset="utf-8">
     <title>Alpha-欢迎您</title>
-    <link rel="shortcut icon" href="icon/title.ico"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap3.3.7.min.css">
+    <link rel="shortcut icon" href="../icon/title.ico"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap3.3.7.min.css">
 
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap3.3.7.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap3.3.7.min.js"></script>
+    <script src="../js/index.js"></script>
     <style>
-        .content{
-            width: 80%;margin: auto;}
-        html body{font-size:18px;}
         a:hover{text-decoration: none;color:#000;}
         a{ text-decoration:none;}
         a:link {
             text-decoration: none;
         }
+        .content{
+            width: 80%;margin: auto}
+        h3{
+            width: 100%;text-align: center;}
+        .xmp{color:#3d464d;;text-indent: 2em;}
+        pre{line-height: 200%;font-size: 16px;}
+
     </style>
     <script>
-        $(document).ready(function(){
-            $(".navbar-nav li").click(function () {
-                $(".nav li").each(function () {
-                    $(".nav li").attr('class','');
-                });
-                $(this).attr('class','active');
-            })
-        })
+
     </script>
 </head>
 <body>
 
 <div class="warp">
     <div>
-        <h1><a href="javascript:;">Alpha</a></h1>
+        <h1><a href="../index.html">Alpha</a></h1>
     </div>
-    <nav class="navbar navbar-default"  role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -61,7 +58,7 @@
         </div>
     </nav>
     <div class="img">
-        <img src="images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
+        <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
     </div>
     <hr>
     <!--返回顶部箭头-->
@@ -70,22 +67,28 @@
             <a style="text-decoration:none;color:#fff;;" href="javascript:;">顶部</a>
         </b>
     </div>
+<!--content主要内容-->
     <div class="content">
-        <p>
-            <a href="code/javascript.html" target="_blank">什么是JavaScript</a>
-        </p>
-        <p>
-            <a href="code/arr-repeat.html" target="_blank">JavaScript数组排序和数组去重</a>
-        </p>
-        <p>
-            <a href="code/mobile.html" target="_blank">移动端必用</a>
-        </p>
-        <p><a href="code/get%20and%20post.html" target="_blank">get和post数据交互:jquery和angular</a></p>
-        <p><a target="_blank" href="code/string.html">javaScript的字符操作</a></p>
-        <p><a target="_blank" href="code/event.html">JS的各个事件(event)对象</a></p>
-        <p><a target="_blank" href="code/jQuery-ajax.html">jQuery的ajax各种方法</a></p>
-        <p><a target="_blank" href="code/strange.html">前端诡异元素</a></p>
-        <p><a target="_blank" href="code/Storage.html">cookie、localStorage和sessionStorage</a></p>
+        <h3>cookie、localStorage和sessionStorage区别和用法</h3>
+        <div>
+            <p><b>1.cookie、localStorage和sessionStorage特性:</b></p>
+            <p class="xmp">cookie:当用户第一次访问带有cookie网站(服务器)是时候,这个服务器会将一些 Key/Value 键值对返回给客户端浏览器,cookie会暂时保存在浏览器中,在没有设置过期时间的情况下，cookie值会在浏览器关闭的时候清除;
+cookie机制:每次请求服务器的时候,http会携带cookie值,进行匹配,如果成功,数据没必要在进行交互,减少了对服务器的请求;
+            <pre>
+        用法:
+        设置cookie:document.cookie="name=value;expires=过期时间"
+        **过期时间必须是expires,不可以自定义,不然浏览器不认;
+        获取cookie:var c=document.cookie;**返回的是字符串形式;
+        清除cookie:document.cookie="name=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
+        <b> 1.cookie数据存放在客户的浏览器上,保存在硬盘上的</b>
+        <b> 2.cookie每天储存不会超过4k</b>
+        <b> 3.cookie因为是保证在本地的,因此不安全;</b>
+        <b> **提议:重要信息不要用cookie进行保存;</b>
+        </b>
+</pre>
+</p>
+        </div>
+
     </div>
     <hr>
     <div class="footer">
