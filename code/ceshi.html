@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        *{padding: 0;margin:0;}
+        body{
+            height: 2000px;}
         div{
             width: 200px;
             height: 200px;
@@ -11,11 +14,30 @@
         p{
             width: 100px;
             height: 100px;background-color: green}
+        li{background-color: #ccc;}
     </style>
     <script src="../js/jquery-1.10.2.min.js "></script>
-
     <script>
-        document.addEventListener("DOC")
+       /* document.addEventListener("DOMContentLoaded", function () {
+            var oDiv=document.getElementById("div")
+            document.onclick= function (ev) {
+                var oEvent=ev||window.event;
+                alert(oEvent.screenY);//鼠标Y轴距离屏幕的高度
+                alert(oEvent.offsetY)//鼠标Y轴距离可视化区域的高+距离隐藏掉页面的高度
+                alert(oEvent.pageY)//鼠标Y轴距离可视化区域的高+距离隐藏掉页面的高度
+                alert(oEvent.clientY)//可视化区域的高度Y轴
+                var scr=document.documentElement.scrollTop;
+            }
+        },false)*/
+
+        $(document).ready(function () {
+            var li=$("ul li");
+            console.log(li.bind())
+            li.bind("click", function () {
+                alert(1)
+            });
+                }
+        );
     </script>
     <!--<script>
         window.onload= function () {
@@ -31,11 +53,11 @@
     </script>-->
 </head>
 <body>
-<div>
-    <p></p>
+<div id="div">
+    <p id="p"></p>
 </div>
 <ul>
-    <li>111</li>
+    <li id="li">111</li>
     <li>222</li>
     <li>333</li>
     <li>444</li>
@@ -43,10 +65,5 @@
 </ul>
 </body>
 </html>
-<!--
 <script>
-    $(document).ready(function () {
-        var a= $("li").eq(1).text()
-        alert(typeof a)
-    })
-</script>-->
+</script>

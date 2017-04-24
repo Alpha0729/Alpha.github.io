@@ -70,7 +70,8 @@
             //object.addEventListener('事件',fn，false)
             object.addEventListener("事件名称 ",function(ev){
                 ////在低版本的chrome和firefox浏览器中需要兼容性处理
-                var oEvent=ev ||event;
+            //传参的时候传event兼容火狐浏览器,因为火狐的机制,event必须按传参的方式传近期
+                var oEvent=ev||window.event;
                 //阻止冒泡
                 oEvent.stopPropagation();
              },false);
@@ -81,8 +82,8 @@
             **事件绑定的好处：一个元素可以触多个事件,不会被覆盖;
             **事件绑定不支持IE8以及以下版本
             //阻止事件冒泡行为:
-            event.stopPropagation();
-
+            chrome和Firefox：event.stopPropagation(),把该方法 放到要阻止冒泡的object函数里面
+            IE：event.cancelBubble=true
             <b>***************特别重要，DOMContentLoaded</b>可以代替onload事件;
             DOMContentLoaded ：它的意思是：等DOM树构建完成后执行的事件,没必要等页面全部加载完成;
             document.addEventListener("DOMContentLoaded", function() {
