@@ -326,7 +326,19 @@
             oTop.style.display="none";
         }
         oTop.onclick= function () {
-            document.body.scrollTop=0;
+            var timer=null;
+            clearInterval(timer);
+            timer=setInterval(function () {
+                console.log(oS)
+                document.body.scrollTop=(oS*=0.8);
+                if (oS<=1){
+                    oS=0;
+                    clearInterval(timer);
+                    oTop.style.display="none";
+                    //alert(oS)
+                }
+                console.log(oS)
+            },30)
         }
     },false);
 </script>

@@ -106,6 +106,32 @@
 
             }*/
  window.addEventListener("load ",function(){
+     window.addEventListener('scroll', function () {
+         var oTop=document.getElementById('top');
+         var oH=document.documentElement.clientHeight;
+         var oS=document.body.scrollTop;
+         if(oH+oS>oH){
+             oTop.style.display="block";
+
+         }else {
+             oTop.style.display="none";
+         }
+         oTop.onclick= function () {
+             var timer=null;
+             clearInterval(timer);
+             timer=setInterval(function () {
+                 console.log(oS)
+                 document.body.scrollTop=(oS*=0.8);
+                 if (oS<=1){
+                     oS=0;
+                     clearInterval(timer);
+                     oTop.style.display="none";
+                     //alert(oS)
+                 }
+                 console.log(oS)
+             },30)
+         }
+     },false);
      var oM=document.getElementById("myDiv");
      alert(oM)
  })

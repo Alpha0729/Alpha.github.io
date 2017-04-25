@@ -109,6 +109,7 @@ cookie机制:每次请求服务器的时候,http会携带cookie值,进行匹配,
 </body>
 </html>
 <script>
+
     window.addEventListener('scroll', function () {
         var oTop=document.getElementById('top');
         var oH=document.documentElement.clientHeight;
@@ -120,7 +121,20 @@ cookie机制:每次请求服务器的时候,http会携带cookie值,进行匹配,
             oTop.style.display="none";
         }
         oTop.onclick= function () {
-            document.body.scrollTop=0;
+            var timer=null;
+            clearInterval(timer);
+            timer=setInterval(function () {
+                console.log(oS)
+                document.body.scrollTop=(oS*=0.8);
+                if (oS<=1){
+                    oS=0;
+                    clearInterval(timer);
+                    oTop.style.display="none";
+                   //alert(oS)
+                }
+                console.log(oS)
+            },30)
         }
     },false);
+
 </script>
