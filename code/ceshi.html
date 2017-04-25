@@ -51,7 +51,7 @@
            new a()
         }
     </script>-->
-    <script>
+   <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             var oUl=document.getElementById('ul');
             var aLi=oUl.getElementsByTagName('li')[0];
@@ -64,7 +64,7 @@
             });
         },false)
 
-    </script>
+    </script>-->
 </head>
 <body>
 <div id="div">
@@ -82,7 +82,14 @@
 </body>
 </html>
 <script>
-    var Date=new Date();
-    document.cookie="name=liu;expires="+Date;
-    alert(document.cookie)
+    window.onclick= function () {
+        window.sessionStorage.nnn="Alpha";
+        window.sessionStorage.setItem("name",123);
+        console.log(sessionStorage.getItem("name"));
+        alert(1)
+    };
+    /*window.localStorage.name="liuyichao123";
+    window.localStorage.setItem("liu","18");
+    console.log(window.localStorage);
+    console.log(localStorage.getItem("liu"));*/
 </script>

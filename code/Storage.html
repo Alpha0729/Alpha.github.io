@@ -71,9 +71,9 @@
     <div class="content">
         <h3>cookie、localStorage和sessionStorage区别和用法</h3>
         <div>
-            <p><b>1.cookie、localStorage和sessionStorage特性:</b></p>
-            <p class="xmp">cookie:当用户第一次访问带有cookie网站(服务器)是时候,这个服务器会将一些 Key/Value 键值对返回给客户端浏览器,cookie会暂时保存在浏览器中,在没有设置过期时间的情况下，cookie值会在浏览器关闭的时候清除;
-cookie机制:每次请求服务器的时候,http会携带cookie值,进行匹配,如果成功,数据没必要在进行交互,减少了对服务器的请求;
+            <h4><b>cookie、localStorage和sessionStorage特性:</b></h4>
+            <p class="xmp">1.cookie:当用户第一次访问带有cookie网站(服务器)的时候,这个服务器会将一些 Key/Value 键值对返回给客户端浏览器,cookie会暂时保存在浏览器中,在没有设置过期时间的情况下，cookie值会在浏览器关闭的时候清除;
+cookie机制:每次请求服务器的时候,http会携带cookie,进行匹配,如果成功,数据没必要在进行交互,减少了对服务器的请求;
             <pre>
         用法:
         设置cookie:document.cookie="name=value;expires=过期时间"
@@ -81,12 +81,68 @@ cookie机制:每次请求服务器的时候,http会携带cookie值,进行匹配,
         获取cookie:var c=document.cookie;**返回的是字符串形式;
         清除cookie:document.cookie="name=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
         <b> 1.cookie数据存放在客户的浏览器上,保存在硬盘上的</b>
-        <b> 2.cookie每天储存不会超过4k</b>
+        <b> 2.cookie每条储存不会超过4k</b>
         <b> 3.cookie因为是保证在本地的,因此不安全;</b>
         <b> **提议:重要信息不要用cookie进行保存;</b>
         </b>
 </pre>
-</p>
+            </p>
+            <!--localStorage用法-->
+            <p class="xmp">2.localStorage:可以将第一次请求的数据直接存储到本地，这个相当于一个5M大小的针对于前端页面的数据库，相比于cookie可以节约带宽，但是这个却是只有在高版本的浏览器中才支持的
+            <pre>
+        用法：
+        有必要情况下简称一下浏览器是否支持localStorage:
+        if(！window.localStorage){
+            //localStorage不支持低版本浏览器IE8+
+            alert("浏览器支持localstorage");
+            return false;
+        }else{
+            //主逻辑业务
+            var storage=window.localStorage;
+            //写入a字段
+            storage["a"]=1;
+            //写入b字段
+            storage.a=1;
+            //写入c字段
+            storage.setItem("c",3);
+            console.log(typeof storage["a"]);
+            console.log(typeof storage["b"]);
+            console.log(typeof storage["c"]);
+        }
+        设置: window.localStorage.name="value";
+              window.localStorage["name"]="value"
+              window.localStorage.setItem("name","value");**w3c推荐使用这种方法;可以有json{name:value,name:value}
+        获取 window.localStorage.name
+        获取 window.localStorage.getItem("name")
+        清除 localStorage.removeItem(name);
+        删除所有数据：localStorage.clear();
+        得到某个索引的key：localStorage.key(index)
+        localStorage:优势、劣势:
+        <b> 1.localStorage拓展了cookie的4K限制,localStorage储存容量5M大小</b>
+        <b> 2.localStorage请求的数据是直接存储到本地</b>
+        <b> 3.localStorage因为是保证在本地的,因此不安全;</b>
+        <b> 4.localStorage只要不手动清除,它是永久保存在储存在浏览器相对于的硬盘中的;</b>
+        <b> **提议:localStorage和cookie差不多,都是用来储存没必要的缓存,localStorage储存比较而已;</b>
+                </b>
+</pre>
+            </p>
+
+            <p class="xmp">3.sessionStorage:session数据保存在服务器端上的；
+            <pre>
+        用法：
+        设置: window.sessionStorage.nnn="Alpha";
+              window.sessionStorage.setItem("name",123)
+        获取 window.sessionStorage.nnn
+        获取 window.sessionStorage.getItem("name")
+        sessionStorage:优势、劣势:
+        <b> 1.session数据放在服务器上</b>
+        <b> 2.因为session是保存在服务器上的，比较安全</b>
+        <b> 3.session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，
+        如果有大量的信息,考虑到减轻服务器性能方面，应当使用COOKIE</b>
+        <b> **所以个人建议：将登陆信息等重要信息存放为session,其他信息如果需要保留，可以放在COOKIE中已;</b>
+                </b>
+</pre>
+            </p>
         </div>
 
     </div>
