@@ -104,7 +104,6 @@
             var timer=null;
             clearInterval(timer);
             timer=setInterval(function () {
-                console.log(oS)
                 document.body.scrollTop=(oS*=0.8);
                 if (oS<=1){
                     oS=0;
@@ -112,8 +111,7 @@
                     oTop.style.display="none";
                     //alert(oS)
                 }
-                console.log(oS)
             },30)
         }
-    },false);;
+    },false);
 </script>
