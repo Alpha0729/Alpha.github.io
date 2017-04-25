@@ -6,18 +6,36 @@
     <link rel="stylesheet" href="">
     <style>
 
-        .div{
-            width: 200px;height: 200px;
-            background-color: red; margin-left: 200px;}
-        #div{width: 200px;height: 200px;
-            background-color: green; margin-left: 200px;}
-        .liu{
-            width: 100px;
-            height: 100px;background-color: #ccc;}
     </style>
 </head>
 <body>
-<div class="div" id="div"></div>
-<div class="liu">liuyuichao</div>
+<div id="div">div div <a href="#">aaaaa</a> </div>
+<ul id="ul">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+
 </body>
 </html>
+<script>
+    window.onload= function () {
+        var oDiv=document.getElementById('div');
+        var oUl=document.getElementById('ul');
+        var aLi=oUl.getElementsByTagName('li');
+        /*for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick= function () {
+                console.log(event)
+            }
+        }*/
+        oUl.onclick= function (ev) {
+            var oEvent=ev || window.event;
+            console.log(event.target.nodeName);
+                oEvent.target.style.backgroundColor="red";
+        };
+        oDiv.onclick= function () {
+            var a=oDiv.nodeName;
+            alert(a)
+        }
+    }
+</script>
