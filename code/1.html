@@ -3,39 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="">
-    <style>
-
-    </style>
 </head>
 <body>
-<div id="div">div div <a href="#">aaaaa</a> </div>
-<ul id="ul">
+<input type="button" name="" id="btn" value="添加" />
+<ul id="ul1">
     <li>111</li>
     <li>222</li>
     <li>333</li>
+    <li>444</li>
 </ul>
-
 </body>
 </html>
 <script>
-    window.onload= function () {
-        var oDiv=document.getElementById('div');
-        var oUl=document.getElementById('ul');
-        var aLi=oUl.getElementsByTagName('li');
-        /*for(var i=0;i<aLi.length;i++){
-            aLi[i].onclick= function () {
-                console.log(event)
+    window.onload = function(){
+        var oBtn = document.getElementById("btn");
+        var oUl = document.getElementById("ul1");
+        var aLi = oUl.getElementsByTagName('li');
+        var num = 4;
+
+        //鼠标移入变红，移出变白
+        function a(){
+            for(var i=0; i<aLi.length;i++){
+                aLi[i].onmouseover = function(){
+                    this.style.background = 'red';
+                    this.style.color="#fff"
+                };
+                aLi[i].onmouseout = function(){
+                    this.style.background = '';
+                    this.style.color="#000"
+                }
             }
-        }*/
-        oUl.onclick= function (ev) {
-            var oEvent=ev || window.event;
-            console.log(event.target.nodeName);
-                oEvent.target.style.backgroundColor="red";
-        };
-        oDiv.onclick= function () {
-            var a=oDiv.nodeName;
-            alert(a)
         }
+        a();
+        //添加新节点
+        oBtn.onclick = function(){
+            num++;
+            var oLi = document.createElement('li');
+            oLi.innerHTML = 111*num;
+            oUl.appendChild(oLi);
+            a()
+        };
     }
 </script>
