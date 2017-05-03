@@ -7,94 +7,28 @@
         *{padding: 0;margin:0;}
         body{
             height: 2000px;}
-        div{
-            width: 200px;
-            height: 200px;
-            background: #ffff00;}
-        p{
-            width: 100px;
-            height: 100px;background-color: green}
-        li{background-color: #ccc;}
     </style>
     <script src="../js/jquery-1.10.2.min.js "></script>
+    <script src="../js/angular1.6.3.min.js"></script>
     <script>
-       /* document.addEventListener("DOMContentLoaded", function () {
-            var oDiv=document.getElementById("div")
-            document.onclick= function (ev) {
-                var oEvent=ev||window.event;
-                alert(oEvent.screenY);//鼠标Y轴距离屏幕的高度
-                alert(oEvent.offsetY)//鼠标Y轴距离可视化区域的高+距离隐藏掉页面的高度
-                alert(oEvent.pageY)//鼠标Y轴距离可视化区域的高+距离隐藏掉页面的高度
-                alert(oEvent.clientY)//可视化区域的高度Y轴
-                var scr=document.documentElement.scrollTop;
-            }
-        },false)*/
 
-        /*$(document).ready(function () {
-            var li=$("ul li");
-            console.log(li.bind())
-            li.bind("click", function () {
-                alert(1)
-            });
-                }
-        );*/
-           </script>
-    <!--<script>
-        window.onload= function () {
-            var a= function () {
-                a=1;
-            }
-            alert(typeof a)
-            function a(){
-                alert(this)
-            }
-           new a()
-        }
-    </script>-->
-   <!-- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var oUl=document.getElementById('ul');
-            var aLi=oUl.getElementsByTagName('li')[0];
-            oUl.addEventListener("click", function (ev) {
-                var oEvent=ev.target||ev.srcElement;
-                console.log(oEvent.nodeName)
-                if(oEvent.nodeName.toLowerCase()=="li"){
-                    oEvent.style.background = "red";
-                }
-            });
-        },false)
+    </script>
 
-    </script>-->
 </head>
 <body>
-<div id="div">
-    <p id="p"></p>
-</div>
-<ul id="ul">
-    <li id="li">111</li>
-    <b>123dfsdfas</b>
-    <li>222</li>
-    <li>333</li>
-    <li>444</li>
-    <li>555</li>
-</ul>
+<div id="div" ng-app="myApp" ng-controller="names">
 
+    <div id="ng" ng-click="name=name+1">{{name}}</div>
+    <p ng-click="fn()" style="background-color: red;">lk;sdf;kljasdf</p>
+</div>
 </body>
 </html>
 <script>
-    var a=0;
-    while (a<5){
-        alert("abc")
-        a++;
-    }
-    /*window.onclick= function () {
-        window.sessionStorage.nnn="Alpha";
-        window.sessionStorage.setItem("name",123);
-        console.log(sessionStorage.getItem("name"));
-        alert(1)
-    };*/
-    /*window.localStorage.name="liuyichao123";
-    window.localStorage.setItem("liu","18");
-    console.log(window.localStorage);
-    console.log(localStorage.getItem("liu"));*/
+ var app=angular.module("myApp",[]);
+    app.controller("names", function ($scope) {
+        $scope.name= 0;
+        $scope.fn= function () {
+            alert(1)
+        }
+    })
 </script>

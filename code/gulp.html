@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Alpha-欢迎您</title>
+    <link rel="shortcut icon" href="../icon/title.ico"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap3.3.7.min.css">
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap3.3.7.min.js"></script>
+    <script src="../js/index.js"></script>
+    <style>
+        a:hover{text-decoration: none;color:#000;}
+        a{ text-decoration:none;}
+        a:link {
+            text-decoration: none;
+        }
+        .content{
+            width: 80%;margin: auto}
+        h3{
+            width: 100%;text-align: center;}
+        .xmp{color:#3d464d;;text-indent: 2em;}
+        pre{line-height: 200%;font-size: 16px;color: #000;}
+        p{
+            text-indent:2em;}
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+
+<div class="warp">
+    <div>
+        <h1><a href="../index.html">Alpha</a></h1>
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">javascript</a></li>
+                    <li><a href="#">css</a></li>
+                    <li><a href="#">jquery</a></li>
+                    <li><a href="#">angular</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="img">
+        <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
+    </div>
+    <hr>
+    <!--返回顶部箭头-->
+    <div id="top" style="width: 50px;height: 50px;background-color: #999;position: fixed;right: 50px;bottom:50px;text-align: center;line-height: 50px;display: none;">
+        <b>
+            <a style="text-decoration:none;color:#fff;;" href="javascript:;">顶部</a>
+        </b>
+    </div>
+<!--content主要内容-->
+    <div class="content">
+        <h3>gulp自动化工具，常用方法</h3>
+        <!--安装gulp-->
+        <div>
+            <h4><b>1、gulp安装:</b></h4>
+            <p>1.1、gulp安装:首先确保你已经正确安装了nodejs环境,然后以全局方式安装gulp：</p>
+            <pre>
+        npm install -g gulp</pre>
+        </div>
+        <div>
+            <p>1.2、全局安装gulp后，还需要在每个要使用gulp的项目中都单独安装一次,把目录切换到你的项目文件夹中，然后在命令行中执行:</p>
+            <pre>
+        npm install gulp  //安装后会生成一个为：node_modules的文件</pre>
+        </div>
+        <div>
+            <p>1.3、如果想在安装的时候把gulp写进项目package.json文件的依赖中，则可以加上--save-dev:</p>
+            <pre>
+        npm install --save-dev gulp  //这一步可以省略</pre>
+        </div>
+        <!--新建gulpfile.js文件-->
+        <div>
+            <h4><b>2、使用gulp:</b></h4>
+            <p>2.1、建立gulpfile.js文件：</p>
+            <pre>
+        var gulp = require('gulp');
+        gulp.task('default',function(){
+            //要执行的任务
+        });</pre>
+        </div>
+        <div>
+            <p>2.2、js代码压缩和重命名：使用前要安装gulp控件:</p>
+            <pre>
+        npm install --save-dev gulp-rename    //gulp-rename重命名控件
+        npm install --save-dev gulp-uglify    //gulp-uglify  // jS压缩控件
+        <b>注意：不安装上面两个程序跑不起来</b>
+        用法:
+            var gulp = require('gulp'),
+            rename = require('gulp-rename');  //重命名控件
+            uglify = require("gulp-uglify"); //压缩控件
+
+            gulp.task('default', function () {
+                gulp.src('js/1.js')  //要压缩的文件名路径
+                .pipe(gulp.dest('js'))//表示没有压缩前要保存的文件
+                .pipe(uglify())  //代码压缩
+                .pipe(rename('jquery.min.js')) //会将1.js重命名为jquery.min.js，也就是压缩后自定义名字；
+                .pipe(gulp.dest('js')); //压缩后存放的路径
+                //关于gulp-rename的更多强大的用法请参考 <a target="_blank" href="https://www.npmjs.com/package/gulp-rename">https://www.npmjs.com/package/gulp-rename</a>
+            });
+            </pre>
+        </div>
+        <div>
+            <p>2.3、css代码压缩和重命名：使用前要安装gulp控件:</p>
+            <pre>
+        npm install --save-dev gulp-rename    //gulp-rename重命名控件
+        npm install --save-dev gulp-minify-css    //gulp-minify-css  // css压缩控件
+        <b>注意：不安装上面两个程序跑不起来</b>
+        用法:
+            var gulp = require('gulp'),
+            rename = require('gulp-rename');  //重命名控件
+            minifyCss = require('gulp-minify-css');; //压缩控件
+
+            gulp.task('default', function () {
+                gulp.src('1.css') // 要压缩的css文件
+                .pipe(gulp.dest('css'))//保存未压缩前的文件；
+                .pipe(minifyCss()) //压缩css
+                .pipe(rename('jquery.min.css'))  //压缩后的自定义文件名字
+                .pipe(gulp.dest('css'));  //需要保存的文件路径
+            });
+            </pre>
+        </div>
+        <div>
+            <p><h4><b>3、混合用法</b></h4></p>
+            <pre>
+    在项目目录下gitBash运行:
+        npm install  gulp-minify-css gulp-uglify gulp-rename gulp-rename gulp-rename gulp-jshint
+            gulp-jshint gulp-minify-html gulp-imagemin --save-dev
+        对应：minify-css压缩css、uglify压缩jS、rename压缩后自定义文件名、rename合并文件、rename结果提示、jshint语法检查、
+            jshint清空文件、minify-html：HTML压缩、imagemin图片压缩！
+
+        <b>注意：不安装上面程序,跑不起来</b>
+        用法:
+            var gulp = require('gulp'),
+            uglify = require("gulp-uglify");//js压缩
+            minifyCss = require('gulp-minify-css'); //压缩控件
+            minifyHtml = require("gulp-minify-html");
+            var imagemin = require('gulp-imagemin');//图片压缩
+            rename=require('gulp-rename'),   //文件重命名
+            concat=require('gulp-concat'),   //合并文件
+            jshint=require('gulp-jshint'),   //js检查
+            notify=require('gulp-notify');   //提示
+                //我叫它控制摸版
+            gulp.task('default', function () {
+                gulp.start('minifyJs','minifyCss');
+             });
+                // --JS压缩--
+            gulp.task('minifyJs', function () {
+                //如果Js没在一个文件里就“[]”:即gulp.src(['js/*.js','arr-js/*.js']);
+                gulp.src('js/*.js') // 要压缩的Js文件路径
+                .pipe(gulp.dest('js'))//保存未压缩前的文件；
+                .pipe(concat('arr.js'))//合并js文件后得到"name"js文件名；**它和rename自定义名冲突;
+                .pipe(uglify())  //压缩JS
+                .pipe(rename('jquery.min.js'))  //压缩后的自定义文件名字;它和concat合并冲突,如果定义了该方法,则按着名字;
+                .pipe(gulp.dest('js'));  //需要保存的文件路径
+            });
+             //--css压缩--
+            gulp.task('minifyCss', function () {
+                gulp.src('css/*.css') // 要压缩的css文件路径
+                .pipe(gulp.dest('css'))//保存未压缩前的文件；
+                .pipe(concat('arr.css'))//合并css文件后得到"name"文件名；**它和rename自定义名冲突;
+                .pipe(minifyCss()) //压缩css
+                //rename压缩后的自定义文件名字;它和concat合并冲突,如果定义了该方法,则按着名字;
+                .pipe(rename('jquery.min.css'))
+                .pipe(gulp.dest('css'));  //需要保存的文件路径
+            });
+                // --图片压缩--> <b>个人觉得图片压缩没有必要,因为压缩没有太大的变化;</b>
+            gulp.task('miniImages', function(){
+            gulp.src('images/*')    //需要压缩的路径
+                .pipe(imagemin())   //压缩图片
+                .pipe(gulp.dest('images2'));  //压缩后存放路径
+            });
+            </pre>
+        </div>
+
+
+    </div>
+    <hr>
+    <div class="footer">
+        <div>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        <div class="footer-bottom">
+            <p>这是一段内容</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    window.addEventListener('scroll', function () {
+        var oTop=document.getElementById('top');
+        var oH=document.documentElement.clientHeight;
+        var oS=document.body.scrollTop;
+        if(oH+oS>oH){
+            oTop.style.display="block";
+
+        }else {
+            oTop.style.display="none";
+        }
+        oTop.onclick= function () {
+            var timer=null;
+            clearInterval(timer);
+            timer=setInterval(function () {
+                document.body.scrollTop=(oS*=0.8);
+                if (oS<=1){
+                    oS=0;
+                    clearInterval(timer);
+                    oTop.style.display="none";
+                    //alert(oS)
+                }
+            },30)
+        }
+    },false);
+</script>
