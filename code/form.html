@@ -3,41 +3,38 @@
 <head>
     <meta charset="utf-8">
     <title>Alpha-欢迎您</title>
-    <link rel="shortcut icon" href="icon/title.ico"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap3.3.7.min.css">
+    <link rel="shortcut icon" href="../icon/title.ico"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap3.3.7.min.css">
 
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap3.3.7.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap3.3.7.min.js"></script>
+    <script src="../js/index.js"></script>
     <style>
-        .content{
-            width: 80%;margin: auto;}
-        html body{font-size:18px;}
         a:hover{text-decoration: none;color:#000;}
         a{ text-decoration:none;}
         a:link {
             text-decoration: none;
         }
+        .content{
+            width: 80%;margin: auto}
+        h3{
+            width: 100%;text-align: center;}
+        .xmp{color:#3d464d;;text-indent: 2em;}
+        pre{line-height: 200%;font-size: 14px;}
+
     </style>
     <script>
-        $(document).ready(function(){
-            $(".navbar-nav li").click(function () {
-                $(".nav li").each(function () {
-                    $(".nav li").attr('class','');
-                });
-                $(this).attr('class','active');
-            })
-        })
+
     </script>
 </head>
 <body>
 
 <div class="warp">
     <div>
-        <h1><a href="javascript:;">Alpha</a></h1>
+        <h1><a href="../index.html">Alpha</a></h1>
     </div>
-    <nav class="navbar navbar-default"  role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -61,7 +58,7 @@
         </div>
     </nav>
     <div class="img">
-        <img src="images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
+        <img src="../images/javaScript.png" style=";height: 300px;background:#ccc;" alt="">
     </div>
     <hr>
     <!--返回顶部箭头-->
@@ -70,28 +67,22 @@
             <a style="text-decoration:none;color:#fff;;" href="javascript:;">顶部</a>
         </b>
     </div>
+<!--content主要内容-->
     <div class="content">
-        <p>
-            <a href="code/javascript.html" target="_blank">什么是JavaScript</a>
-        </p>
-        <p>
-            <a href="code/arr-repeat.html" target="_blank">JavaScript数组排序和数组去重</a>
-        </p>
-        <p>
-            <a href="code/mobile.html" target="_blank">移动端必用</a>
-        </p>
-        <p><a href="code/get%20and%20post.html" target="_blank">get和post数据交互:jquery和angular</a></p>
-        <p><a target="_blank" href="code/string.html">javaScript的字符操作</a></p>
-        <p><a target="_blank" href="code/event.html">JS的各个事件(event)对象</a></p>
-        <p><a target="_blank" href="code/jQuery-ajax.html">jQuery的ajax各种方法</a></p>
-        <p><a target="_blank" href="code/strange.html">前端诡异元素</a></p>
-        <p><a target="_blank" href="code/Storage.html">cookie、localStorage和sessionStorage</a></p>
-        <p><a target="_blank" href="code/DOM.html">DOM操作以及使用</a></p>
-        <p><a target="_blank" href="code/target-srcElement.html">事件委托原理及用法</a></p>
-        <p><a target="_blank" href="code/object.html">面向对象</a></p>
-        <p><a target="_blank" href="code/gulp.html">gulp自动化工具</a></p>
-        <p><a target="_blank" href="code/form.html">form表单</a></p>
-        <p><a target="_blank" href="code/RegExp.html">javaScript正则</a></p>
+        <h3>form表单相关属性</h3>
+        <div>
+            <h4><b>1、HTML < form>标签：</b> </h4>
+            <pre>
+        < form> 标签用于创建供用户输入的 HTML 表单,用法:
+        < form action="www.baidu.com" method="get" target="blank" name="myName">
+                action需要跳转的地址;
+                method:规定用于发送表单数据的 HTTP 方法
+                target:打开方式,blank在新的窗口打开,默认是当前窗口
+                name： 属性规定表单的名称。
+           //执行的表单
+        < /form>
+</pre>
+        </div>
     </div>
     <hr>
     <div class="footer">
@@ -126,7 +117,6 @@
             var timer=null;
             clearInterval(timer);
             timer=setInterval(function () {
-                console.log(oS)
                 document.body.scrollTop=(oS*=0.8);
                 if (oS<=1){
                     oS=0;
@@ -134,7 +124,6 @@
                     oTop.style.display="none";
                     //alert(oS)
                 }
-                console.log(oS)
             },30)
         }
     },false);

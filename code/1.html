@@ -12,60 +12,16 @@
     <script src="../js/jquery-1.10.2.min.js"></script>
     <script>
         window.onload= function () {
-            var a="你好吗";
+            var str="123\r231";
+            alert(str);
+            var R=/[12]/g;
+            alert(str.match(R))
 
-
-            /*function hollow(a,b){
-                this.a=a;
-                this.b=b;
-                this.fn=fn;
-                function fn(a){
-                    this.aaa=a;
-                }
-            };
-            var name=new hollow();
-            name.fn(1);
-            alert(name.aaa)*/
-            var oTxt=document.getElementById('txt');
-            var oBtn=document.getElementById('btn');
-            var oId=document.getElementById('id');
-            var oT=oTxt.value;
-            var oT2=oId.value;
-            oBtn.onclick= function () {
-                alert(oT)
-                alert(oT2)
-                for(var i=0;i<oT.length;i++){
-                    if(oT==oT2){
-                        alert("有")
-                    }
-                }
-            };
-            /*$(document).ready(function () {
-               var v=$("#txt").text();
-                $("#btn").click(function () {
-                    alert(v)
-                })
-            });*/
         }
     </script>
 </head>
 <body>
-<textarea id="txt" name="a" cols="30" rows="10">11</textarea>
-<input type="text" id="id"/>
-<input type="button" name="" id="btn" value="查找" />
 <div></div>
 </body>
 </html>
-<!--
-<script>
-$(document).ready(function () {
-    $("div").on({"mouseover":function () {
-        $("div").stop(true);
-        $("div").animate({"width":"200","left":"-50","height":"200","top":"-50"});
-        },"mouseout": function () {
-        $("div").stop(true);
-        $("div").animate({"width":"100","left":"0","height":"100","top":"0"});
-    }
-    });
-});
-</script>-->
+
