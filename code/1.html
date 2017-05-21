@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        *{margin: 0; padding: 0;}
-        div{
-            width: 100px;
-            height: 100px;background-color: red; margin-left: 500px;margin-top: 300px;position: relative;}
-    </style>
-    <script src="../js/jquery-1.10.2.min.js"></script>
-    <script>
-        window.onload= function () {
-            var str="123\r231";
-            alert(str);
-            var R=/[12]/g;
-            alert(str.match(R))
-
-        }
-    </script>
 </head>
 <body>
-<div></div>
+<div id="div1">
+    <p id="p1">这是一个段落。</p>
+    <p id="p2">这是另一个段落。</p>
+
+</div>
+
+<script>
+    var para=document.createElement("p");
+    var node=document.createTextNode("<h1>这是一个新段落。</h1>");
+    para.appendChild(node);
+
+    var element=document.getElementById("div1");
+    element.appendChild(para);
+</script>
 </body>
 </html>
-

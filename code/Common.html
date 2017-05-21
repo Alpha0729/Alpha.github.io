@@ -69,41 +69,20 @@
     </div>
 <!--content主要内容-->
     <div class="content">
-        <h3>DOM操作以及使用</h3>
+        <h3>清除各种默认行为</h3>
         <div>
-            <p>1.nodeName属性可依据节点的类型返回其名称</p>
             <pre>
-            例如：oDiv.onclick=function(){
-                    var node =oDiv.nodeName;
-                    node=DIV   //返回出来的节点是大写的,如果需要利用toLowerCase转换成小写;
-                }
-            javaScript用法:object.nodeName;
+                *{ margin:0 ; padding:0;}
+                li{ list-style:none;}
+                img{border:none;}
+                .fl{ float:left;}
+                .fr{ float:right;}
+                a{ text-decoration:none;}
+                a:link {text-decoration: none;}
+                a:visited{text-decoration:none;}
+                .clearFix:after{ content:''; display:block; clear:both;}
+                .clear{zoom:1;}
             </pre>
-        </div>
-        <div>
-            <p>2.添加或删除DOM元素</p>
-            <pre>
-        <b>2.1 、创建元素</b>
-        < div id="div1">
-            < p id="p1">这是一个段落。< /p>
-            < p id="p2">这是另一个段落。< /p>
-        < /div>
-        //创建一个元素p节点
-        var para=document.createElement("p");
-        //创建一个文本节点,目的是要往创建的元素里面添加
-        var node=document.createTextNode("这是一个新段落。");
-        //往新元素 p 里面添加内容
-        para.appendChild(node);
-        //获取元素div1
-        var element=document.getElementById("div1");
-        //最后添加元素到element里面
-        element.appendChild(para);
-        <b>2.2 、删除元素</b>
-            var parent=document.getElementById("div1");
-            var child=document.getElementById("p1");
-            //删除parent里面的元素；
-            parent.removeChild(child);
-     </pre>
         </div>
     </div>
     <hr>
@@ -148,5 +127,5 @@
                 }
             },30)
         }
-    },false);;
+    },false);
 </script>
