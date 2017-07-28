@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timer</title>
+    <style>
+        *{margin: 0 ;padding: 0;list-style:none;}
+        ul{background-color: #5bc0de;
+            width: 480px;margin: 80px auto;overflow: hidden;text-align: center;}
+        li{
+            line-height: 30px;;
+            width: 60px;
+            height: 30px;text-align: center;
+            float: left;background-color: #ccc;margin: 10px;}
+    </style>
+    <script>
+        window.onload= function () {
+            var oBox=document.getElementById('box');
+            var aLi=oBox.getElementsByTagName('li');
+
+            timer();
+            function timer( ){
+                var oDate=new Date();
+                var Fy=oDate.getFullYear();
+                var Month=oDate.getMonth();
+                var D=oDate.getDate();
+                var Hs=oDate.getHours();
+                var Min=oDate.getMinutes();
+                var S=oDate.getSeconds();
+                function ling(){
+                    if (S>=10){
+                        return  S +" 秒";
+                    }else {
+                       return "0"+S +" 秒";
+                    }
+                }
+                //alert(typeof ling())
+                for(var i=0;i<aLi.length;i++){
+                    //按i作为条件进行判断
+                    switch (i){
+                        //如果i=0；那么执行case下面代码
+                        case 0:
+                            aLi[i].innerHTML=Fy +" 年";
+                            //break跳出执行，进行下面语句判断
+                            break;
+                        case 1:
+                            aLi[i].innerHTML=Month+1+" 月";
+                            break;
+                        case 2:
+                            aLi[i].innerHTML=D+" 日";
+                            break;
+                        case 3:
+                            aLi[i].innerHTML=Hs+ " 时";
+                            break;
+                        case 4:
+                            aLi[i].innerHTML=Min +" 分";
+                            break;
+                        case 5:
+                            aLi[i].innerHTML= ling();
+                            break;
+                        //如果上面的条件都不满足 则执行该语句
+                        default :
+                            alert("获取时间错误")
+                    }
+                }
+            }
+            setInterval(timer,1000)
+        }
+    </script>
+</head>
+<body>
+<ul id="box">
+    <li>年</li>
+    <li>月</li>
+    <li>日</li>
+    <li>时</li>
+    <li>分</li>
+    <li>秒</li>
+</ul>
+</body>
+</html>

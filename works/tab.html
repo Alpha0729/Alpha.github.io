@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        #div{width:200px;margin: 100px auto;text-align: center}
+        *{padding:0;margin:0;list-style:none;border: none;}
+        ul{margin: 20px 0 0 0}
+        li{
+            width: 200px;
+            height: 200px;background-color: #ccc;line-height: 200px;display: none;}
+        input{
+            width: 22%;
+            height: 30px;}
+        .only{display: block;}
+        .color{color: #f00;}
+
+    </style>
+    <script>
+        window.onload= function () {
+            var oDiv=document.getElementById('div');
+            var aBtn=oDiv.getElementsByTagName('input');
+            var oBox=document.getElementById('box');
+            var aLi=oBox.getElementsByTagName('li');
+            for (var i=0;i<aBtn.length;i++){
+                //给每一个aBtn添加了一个i私有属性index；
+                aBtn[i].index=i;
+                aBtn[i].onclick= function () {
+                    for (var i=0;i<aBtn.length;i++){
+                        aBtn[i].style.backgroundColor="";
+                        aLi[i].style.display="";
+                    }
+                    this.style.backgroundColor="#f00";
+                    //this.index 指的是当前元素属性里面index值
+                    aLi[this.index].style.display="block";
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div">
+    <div>
+        <input style="background-color: red" type="button" value="1111">
+        <input type="button" value="2222">
+        <input type="button" value="3333">
+        <input type="button" value="4444">
+    </div>
+    <ul id="box">
+        <li style="display: block">1111</li>
+        <li style="background-color: green;">2222</li>
+        <li>3333</li>
+        <li style="background-color: green;">4444</li>
+    </ul>
+</div>
+</body>
+</html>

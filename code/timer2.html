@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 800px;margin: 80px auto}
+        #box div{
+            text-align: center;line-height: 40px;;
+            width: 80px;
+            height: 40px;;background-color: rosybrown;float: left;}
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+<div id="box">
+    <div id="Y"></div>
+    <div id="M" style="background-color: #ccc;"></div>
+    <div id="R" style="background-color: #ffffff"></div>
+    <div id="I"></div>
+    <div id="MT"></div>
+    <div id="S"></div>
+</div>
+</body>
+</html>
+<script>
+
+   window.onload= function () {
+       var oBox=document.getElementById('box');
+       var oY=document.getElementById('Y');
+       var oM=document.getElementById('M');
+       var oR=document.getElementById('R');
+       var oI=document.getElementById('I');
+       var oMt=document.getElementById('MT');
+       var oS=document.getElementById('S');
+       timer();
+       function timer() {
+           //创建的事件对象必须放在这里不能放在外边，因为每次都需要获取到最新事件;假如放在外边只能获取一遍
+           var oDate=new Date();
+           var a=oDate.getSeconds();
+           oY.innerHTML=oDate.getFullYear()+'年';
+           oM.innerHTML=oDate.getMonth()+1+'月';
+           oR.innerHTML=oDate.getDate() +'日';
+           oI.innerHTML=oDate.getHours() +'时';
+           oMt.innerHTML=oDate.getMinutes() +'分';
+           if(a<10){
+               oS.innerHTML=("0" +oDate.getSeconds() +'秒')
+           }else {
+           oS.innerHTML=oDate.getSeconds() +'秒';
+           }
+       }
+          setInterval(timer,1000);
+       var oDate=new Date();
+       //var a=oDate.getSeconds();
+       var a="12123123";
+       alert(parseInt(a))
+   }
+</script>

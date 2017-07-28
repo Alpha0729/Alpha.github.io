@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 40px;background-color: #ccc;text-align: center;line-height: 40px;
+            float: left;}
+    </style>
+    <script>
+        window.onload= function () {
+            var R=document.getElementById('R');
+            var oT=document.getElementById('txt');
+            var oW=document.getElementById('W');
+            var oE=document.getElementById('E');
+            var oA=document.getElementById('A');
+            var oD=document.getElementById('D');
+
+            document.onkeydown=function(ev){
+                var event=ev||window.event;
+                var R=document.getElementById("show").innerHTML=event.keyCode +'键码';
+            };
+            R.onclick= function () {
+                oT.value="R";
+              alert("  点击了 R  键码")
+            };;
+                oW.onclick= function () {
+                oT.value="W";
+                // alert("  点击了 R  键码")
+            };
+            oE.onclick= function () {
+                oT.value="E";
+                // alert("  点击了 R  键码")
+            };
+            oA.onclick= function () {
+                oT.value="A";
+                // alert("  点击了 R  键码")
+            };
+            oD.onclick= function () {
+                oT.value="D";
+                // alert("  点击了 R  键码")
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="show"></div>
+
+<div id="R">R</div>
+<div id="W">W</div>
+<div id="E">E</div>
+<div id="A">A</div>
+<div id="D">D</div>
+
+<input type="text" id="txt" value="">
+</body>
+</html>

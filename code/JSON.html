@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        th{
+            width: 20%;}
+        table,th,td
+        {
+            line-height: 100%;
+            border:1px solid #000;
+            height: 60px;text-align: center;}
+    </style>
+    <script>
+        window.onload= function () {
+            var oBox=document.getElementById('box');
+            var json=[{'bh':82228888,'xm':'小红小林','cj':'100'},{'bh':666,'xm':'小林小林','cj':'100'},{'bh':43234,'xm':'小林','cj':'100'},{'bh':678576,'xm':'小林','cj':'100'},{'bh':678576,'xm':'小林','cj':'100'},{'bh':678576,'xm':'小林','cj':'100'},{'bh':678576,'xm':'小林','cj':'100'},{'bh':678576,'xm':'小林','cj':'100'},{'bh':6666,'xm':'小刘','cj':'18'},{'bh':6666,'xm':'小刘','cj':'18'},{'bh':6666,'xm':'小刘','cj':'18'}];
+            for(var i=0;i<json.length;i++){
+                //封装创建td元素
+                function td(){
+                    var oTd=document.createElement("td");
+                    return oTd;
+                };
+                //封装创建属性值
+                function name(name){
+                    var node=document.createTextNode(name);
+                    return node;
+                };
+                //封装添加编号、姓名、年龄
+                function change(oTd,node){
+                    oTd.appendChild(node);
+                    oTr.appendChild(oTd);
+                };
+                var oTr=document.createElement("tr");
+                //创建Tr
+                oBox.appendChild(oTr);
+                var oTd=td();
+                var oTd2=td();
+                var oTd3=td();
+                var node=name(json[i].bh);
+                var node2=name(json[i].xm);
+                var node3=name(json[i].cj);
+                //创建编号
+                change(oTd,node);
+                /*oTr.appendChild(oTd);
+                oTd.appendChild(node);*/
+                //创建姓名
+                change(oTd2,node2);
+                /*oTr.appendChild(oTd2);
+                oTd2.appendChild(node2);*/
+                //创建年龄
+                change(oTd3,node3);
+               /* oTr.appendChild(oTd3);
+                oTd3.appendChild(node3);*/
+            }
+        };
+    </script>
+</head>
+<body>
+<table id="box" style="margin: 0 auto;">
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+
+</table>
+</body>
+</html>

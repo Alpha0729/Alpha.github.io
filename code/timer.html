@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提示框</title>
+    <style>
+        *{margin: 0;padding:0; }
+        li{list-style: none;
+            width: 300px;
+            height: 50px;text-align: center;line-height: 50px;}
+        #box{margin: 80px   auto;
+            width: 300px;background-color: #999}
+    </style>
+    <script>
+        window.onload= function () {
+            var oBox=document.getElementById('box');
+            var aLi=oBox.getElementsByTagName('li');
+            /*alert(aLi.length);*/
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onclick= function () {
+
+                    for(var i=0;i<aLi.length;i++){
+                        aLi[i].style.backgroundColor="";
+                    }
+                    this.style.backgroundColor="#666"
+                }
+            };
+           /* oBox.onclick= function (ev) {
+                var ev=ev||window.event;
+                var target=ev.target||ev.srcElement;
+                /!*if(target.nodeName.toLowerCase() == 'li'){
+                    this.style.backgroundColor="#666";
+                }*!/
+            }*/
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>配置信息</li>
+        <li style="background: #666 ">故障管理</li>
+        <li>当前警告</li>
+        <li>历史警告</li>
+    </ul>
+</div>
+</body>
+</html>
