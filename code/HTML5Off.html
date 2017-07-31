@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -6,8 +6,7 @@
     <link rel="shortcut icon" href="../icon/title.ico"/>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/bootstrap3.3.7.min.css">
-    <script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script>
-    <script type="text/javascript">uaredirect("http://m.aicll.com","http://www.aicll.com");</script>　　
+
     <script src="../js/jquery-1.10.2.min.js"></script>
     <script src="../js/bootstrap3.3.7.min.js"></script>
     <script src="../js/index.js"></script>
@@ -70,24 +69,29 @@
     </div>
 <!--content主要内容-->
     <div class="content">
-        <h3><b>自动识别设备进行PC端和手机端页面跳转</b></h3>
-        <div>
-            <p>1、复制以下代码，把跳转网址改成自己的</p>
-            <p>把代码放在head前面：</p>
-            <pre>
-      try { //try和catch 异常处理  出现出错  会在catch的err里面，一般都是成对出现;
-                //navigator.userAgent 检查设备系统信息 返回string值
-            if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) ;//利用正则match进行查找;
-            {
-                //要跳转的页面，window.location：URL跳转
-                //window.location="https://alpha0729.github.io/Alpha.github.io/";
-            }else {
-                //window.location="https://www.baidu.com/";
-            }
-       }
-    catch(err){}
+        <h3>HTML5离线存储原理</h3>
+        <p>web app中的一些资源并不经常改变，不需要每次都向服务器发送请求。这时应运而生的离线缓存就显得尤为突出</p>
+        <pre>
+    <b>步骤:</b>
+    <b>1.只要在html头部加一个manifest属性就ok了</b>
+        < html manifest = "cache.manifest">
+        < /html>
+    <b>2.然后在项目文件中新建一个后缀为cache.manifest文件,并书写方式如下：</b>
+        CACHE MANIFEST
+        #v0.11   //这里写注释
+        CACHE:   //要缓存的文件.这里写要缓存的文件路径  注：*号表示全部
+        js/app.js
+        css/style.css
+        NETWORK:  //该属性表示不需要进行缓存,只能联网后才能访问;
+        resourse/logo.png
+        FALLBACK:  //该属性表示备份文件,如果上面缓存读取失败,会从这里面进行读取
+        //404.html
+
+            注意：如果服务器文件进行修改,那么需要把.manifest文件进行更新
+            方法：手动更新,随便改一下.manifest文件里面的任意东西,用户访问的时候会及时更新
+            方法(jS)2：听说有一个某个事件可以做到,但是兼容有问题.
+ 5 };
 </pre>
-        </div>
     </div>
     <hr>
     <div class="footer">

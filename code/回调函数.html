@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #box{
+            width: 80px;
+            height: 80px;background-color: red;
+            position: absolute;left: 20px;top: 20px;
+            }
+    </style>
     <script>
-        var i=1;
-        switch (i){
-            case 1:
-                alert(1)
-                break;
-            case 2:
-                alert(2)
-                break;
-            default:alert(3)
+        window.onload= function () {
+            var oBox=document.getElementById('box');
+            oBox.onmousedown= function (ev) {
+                var oEvent=ev || event;
+                var disX=oEvent.clientX-oBox.offsetLeft;
+                var disY=oEvent.clientY-oBox.offsetTop;
+                document.onmousemove= function (ev) {
+                    if (oBox.setCapture){//兼容IE低版本拖拽默认行为  设置事件捕获
+                        oBox.setCapture()
+                    }
+                    var oEvent=ev ||event;
+                    var L=oEvent.clientX-disX;
+                    var T=oEvent.clientY-disY;
+                    oBox.style.left=L +"px";
+                    oBox.style.top=T +"px";
+                    var d=oBox.releaseCapture;
+                    console.log(d);
+                };
+                document.onmouseup= function () {
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+
+                    if (oBox.releaseCapture){
+                        oBox.releaseCapture();//取消IE低版本 事件 捕获（阻止浏览器默认行为）
+                    }
+
+                };
+                return false;
+            }
         }
     </script>
 </head>
 <body>
-
+<div id="box"></div>
+<div>是非得失开房记录卡德加发送到发送到</div>
 </body>
 </html>

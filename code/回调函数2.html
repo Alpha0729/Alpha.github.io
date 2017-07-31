@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" manifest="cache.manifest">
+<script type="text/javascript">
+    try { //try异常处理   这里出现错误   错误提示会在catch的err里面 try和catch是成对出现的
+        //var urlhash = window.location.hash;
+        //if (!urlhash.match("form")){
+            //console.log(navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/gi));
+            //navigator.userAgent 会得到系统版本信息,match正则
+            if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/gi)))
+            {
+                //要跳转的页面
+                //window.location="https://alpha0729.github.io/Alpha.github.io/";
+            }else {
+               // window.location="https://www.baidu.com/";
+            }
+       // }
+    }
+    catch(err){
+        console.log(err)
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var json=[{"name":"liu","age":18,"sex":"男"},{"name":"chang","age":18,"sex":"nv"}];
+        var json2={"name":"chang","age":18,"sex":"nv"};
+        for (var j in json2){
+            //var name=json[j].name;
+            var arr=json2[j];
+            //alert(arr)
+        }
+
+       window.onload= function () {
+           var oDiv=document.getElementById('div');
+           var oSpan=document.createElement('span');
+            /*oDiv.appendChild(oP)*/
+           var oP=oDiv.children[0];
+           oDiv.replaceChild(oSpan,oP)
+       }
+
+    </script>
+</head>
+<body>
+<div id="div">
+    <p>
+        123
+    </p>
+</div>
+</body>
+</html>
