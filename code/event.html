@@ -89,7 +89,8 @@
             document.addEventListener("DOMContentLoaded", function() {
                  // ...代码...
             }, false);
-
+             //兼容IE8或更早版本
+            obj.attachEvent("onclick", fn);
             </pre>
             <p>移除事件绑定</p>
             <pre>

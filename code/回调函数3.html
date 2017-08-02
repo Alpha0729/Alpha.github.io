@@ -4,15 +4,40 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        div{  }
         div{
-            width: 300px;
-            height: 300px;background-color: red;    }
+            width: 200px;
+            height: 200px;background-color: green;}
     </style>
     <script>
-        console.log(window.applicationCache)
+       /* window.onload= function () {
+            var oDiv=document.getElementById('box');
+            var oP=document.getElementById('p');
+            oDiv.addEventListener("click", function () {
+                //var a=oDiv.getAttribute("id");
+
+            })
+        }*/
     </script>
 </head>
 <body>
-<div></div>
+<div id="box">
+    <p id="p">我是个元素</p>
+</div>
+<input type="button" value="点击" id="abc" onclick="abc()">
 </body>
 </html>
+<script>
+    var a=document.getElementById('box');
+    var oDiv=document.getElementById('p');
+   removeChild()
+   /* var oDiv=document.getElementById('box');
+    var aP=document.getElementsByTagName('p');*/
+
+    /*for(var i=0;i<aP.length;i++){
+    aP[i].onclick= function () {
+            this.parentNode.removeChild(this)
+        }
+    }*/
+
+</script>

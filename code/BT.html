@@ -69,57 +69,10 @@
     </div>
 <!--content主要内容-->
     <div class="content">
-        <h3>DOM操作以及使用</h3>
+        <h3>有趣属性</h3>
         <div>
-            <p>1.nodeName属性可依据节点的类型返回其名称</p>
-            <pre>
-            例如：oDiv.onclick=function(){
-                    var node =oDiv.nodeName;
-                    node=DIV   //返回出来的节点是大写的,如果需要利用toLowerCase转换成小写;
-                }
-            javaScript用法:object.nodeName;
-            </pre>
-        </div>
-        <div>
-            <p>2.添加或删除DOM元素</p>
-            <pre>
-        <b>2.1 、创建元素</b>
-        < div id="div1">
-            < p id="p1">这是一个段落。< /p>
-            < p id="p2">这是另一个段落。< /p>
-        < /div>
-        //创建一个元素p节点
-        var para=document.createElement("p");
-        //创建一个文本节点,目的是要往创建的元素里面添加
-        var node=document.createTextNode("这是一个新段落。");
-        //往新元素 p 里面添加内容
-        para.appendChild(node);
-        //获取元素div1
-        var element=document.getElementById("div1");
-        //最后添加元素到element里面
-        element.appendChild(para);
-        <b>2.2 、删除元素</b>
-            var parent=document.getElementById("div1");
-            var child=document.getElementById("p1");
-            //删除parent里面的元素；
-            parent.removeChild(child);
-     </pre>
-            <p>3. 克隆节点</p>
-            <pre>
-             <b></b>
-             //node要克隆的节点, true/false：是否
-             var clo=node.cloneNode(true/false) 克隆该节点（node）所以属性元素
-             obj.appendChide() //克隆出来的添加到某元素内
-            </pre>
-            <p>4. 向某元素前面插入新元素</p>
-            <pre>
-             <b></b>
-             //var oP=document.createElement('p');
-             var node=document.createTextNode('hollow');
-             oP.appendChild(node);
-             //(新元素,要把新元素添加到 父级下子元素位置 *必须这么写)
-             oDiv.insertBefore(oP,oDiv.childNodes[0])
-            </pre>
+            <b style="">1.添加元素contentEditable属性：点击可编辑内容</b>
+            <p style="padding:30px 0;background-color: #ccc" contenteditable="true">点击该元素可编辑内容</p>
         </div>
     </div>
     <hr>
@@ -164,5 +117,5 @@
                 }
             },30)
         }
-    },false);;
+    },false);
 </script>
