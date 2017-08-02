@@ -22,22 +22,19 @@
 </head>
 <body>
 <div id="box">
-    <p id="p">我是个元素</p>
+    <p id="p"><span>我是span <a href="#">我是a</a></span><a href="#"></a></p>
 </div>
 <input type="button" value="点击" id="abc" onclick="abc()">
 </body>
 </html>
 <script>
-    var a=document.getElementById('box');
-    var oDiv=document.getElementById('p');
-   removeChild()
-   /* var oDiv=document.getElementById('box');
-    var aP=document.getElementsByTagName('p');*/
-
-    /*for(var i=0;i<aP.length;i++){
-    aP[i].onclick= function () {
-            this.parentNode.removeChild(this)
-        }
+    var box=document.getElementById('box');
+    var p=document.getElementById('p');
+    var a=p.lastChild;
+    alert(a)
+    /*p.onclick= function (ev) {
+        var ev=ev||window.event;
+        var a=ev.target;
+        console.log(ev)
     }*/
-
 </script>
