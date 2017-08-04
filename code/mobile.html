@@ -73,6 +73,8 @@
                 function change(){
                     //以320屏幕为基础  也就是屏幕的宽度乘以20  是html的初始字体大小
                     doc.documentElement.style.fontSize=doc.documentElement.(clientWidth/320)*20+'px';
+                    //**假如说屏幕宽度刚好是320px，该方法的font-size刚好是20px;如果说窗口大小不是320,
+                    上面有个meta标签它的作用是等比例缩放,刚好达到自适应效果,何乐而不为呢;
              }
                 change();
             })(window,document)

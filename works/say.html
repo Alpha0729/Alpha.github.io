@@ -13,26 +13,56 @@
             var oTxt=document.getElementById('txt');
             var oBtn=document.getElementById('btn');
             var oUl=document.getElementById('ul');
-            oBtn.onclick= function () {
+            function enter(){
                 var aLi=document.createElement('li');
                 var all=oUl.appendChild(aLi);
-                all.innerHTML=oTxt.value+'<a href="javascript:;">删除</a>';
-                /*-   分割线    -*/
-                var aA=document.getElementsByTagName('a');
-                var aLi=document.getElementsByTagName('li');
-                for(var i=0;i<aA.length;i++){
-                    aA[i].onclick= function (){
-                        oUl.removeChild(this.parentNode);
-                    };
-                }
-                //alert(aLi.length)
+                    all.innerHTML=oTxt.value+'<a href="javascript:;">删除</a>';
+                    /*-   分割线    -*/
+                    function add(){
+                        var aA=document.getElementsByTagName('a');
+                        var aLi=document.getElementsByTagName('li');
+                        for(var i=0;i<aA.length;i++){
+                            aA[i].onclick= function (){
+                                oUl.removeChild(this.parentNode);
+                            };
+                        }
+                    }
+                add();
+            }
+            oBtn.onclick= function () {
+                /*var oV2=oTxt.value;*/
+                var oV=oTxt.value
+                if (!oV.length==0){
+                    oV=oTxt.value;
+                    enter();
+                    oTxt.value='';
+                    oTxt.focus();
+                }else {alert('内容不能为空');oTxt.value='';oTxt.focus()}
             };
+            function code(ev){
+                var ev=ev ||window.event;
+                var code=ev.keyCode;
+                return code;
+            };
+            document.onkeydown= function (ev) {
+                var ev=ev ||window.event;
+                var oV=oTxt.value;
+                if (ev.ctrlKey && code()==13 && !oV.length==0 ){
+                    enter();
+                    oTxt.value='';
+                }if (ev.ctrlKey && code()==13 && oV.length==0){
+                   alert('内容不能为空');
+                    oTxt.value='';
+                    oTxt.focus();
+                }
+            }
         }
     </script>
 </head>
 <body>
 <div id="box">
-    <input type="text" id="txt">
+    <textarea style="width: 200px;height: 200px; resize:none; overflow-y: scroll; "></textarea>
+    <input type="text" id="txt" autofocus="autofocus" >
     <input type="button" id="btn" value="留言">
     <ul id="ul">
     </ul>
