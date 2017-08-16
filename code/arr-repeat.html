@@ -173,7 +173,7 @@
         <div>
            3.数组去重：
             <p>
-                例如数组：<span id="go">8,6,7,4,1,1,3,8,2,1,6,8</span>
+                例如数组：<span id="go">11,100,8,6,7,4,1,1,3,100,8,2,1,6,8</span>
             </p>
             <p>
                 <input type="button" id="btn-3" value="点击去重">
@@ -298,19 +298,24 @@
         var oR=document.getElementById('no-repeat');
         var oBtn3=document.getElementById('btn-3');
         var oGo2=oGo.innerText;
+        //var oGo2=[11,100,8,6,7,4,1,1,3,100,8,2,1,6,8];
         var arr3=oGo2.split(',');
-        arr3.sort().indexOf(arr3);
-
+       // var arr3=oGo2;
+        arr3.sort(function (a,b) {
+            return a-b;
+        });
         function repeat(){
+
             for(var i=0;i<arr3.length;i++){
                 if(arr3[i]==arr3[i+1]){
-                    arr3.splice(arr3[i+1],1);
+                    arr3.splice(i,1);
+                    i--;
                 }
             }
             return arr3;
         };
         oBtn3.onclick= function () {
-            oR.innerHTML=repeat()
+            oR.innerHTML=repeat();
         }
     };
 </script>
@@ -329,7 +334,6 @@
             var timer=null;
             clearInterval(timer);
             timer=setInterval(function () {
-                console.log(oS)
                 document.body.scrollTop=(oS*=0.8);
                 if (oS<=1){
                     oS=0;

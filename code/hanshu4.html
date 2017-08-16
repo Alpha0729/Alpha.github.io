@@ -3,47 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        #box,#box2{
+            width: 200px;margin: 100px auto}
+        *{margin: 0; padding: 0;}
+        ul{
+            width: 200px;margin:10px 0;}
+        li{list-style: none;
+            width: 200px;
+            height: 200px;background-color: #ccc;display: none  }
+        li:nth-child(1){
+            display: block;}
+        li:nth-child(2){background-color: green}
+        li:nth-child(4){background-color: green}
+        #box2 ul li{
+            width: 300px;
+            height: 300px;background-color: #ccc;display: none;}
 
-        *{margin: 0;padding: 0;list-style:none;}
-        ul{overflow: hidden;background-color: #ccc;}
-        ul li{
-            width:4rem;height: 4rem;;
-            font-size: 1.6em;background-color: red;float: left;line-height: 100%;}
-        @media screen and (min-width: 1000px){
-            body{background-color: #ccc;}
-        }
     </style>
     <script>
-        /*(function(win,doc){
-            //  resize就是onresize事件;  当页面窗口没改变时触发该事件
-            win.addEventListener('resize',change,false);
-            function change(){
-                //以320屏幕为基础  也就是屏幕的宽度乘以20  是html的初始字体大小
-                doc.documentElement.style.fontSize=doc.documentElement.clientWidth/320*20+'px';
-            }
-            change();
-        })(window,document);*/
-        var oD  =document.getElementById('div')
-        oD.addEventListener('touchmove', function(event) {
-            alert(1)
-        };
-    </script>
+        window.onload=function () {
+            function tab(box,obj,obj2){
+                var oBox=document.getElementById(box.trim());
+                var aInt=oBox.getElementsByTagName(obj.trim());
+                var aLi=oBox.getElementsByTagName(obj2.trim());
+                for (var i=0;i<aLi.length;i++){
+                    (function (i) {
+                        aInt[i].onclick=function(){
+                            for (var j=0;j<aLi.length;j++){
+                                aInt[j].style.backgroundColor="";
+                                aLi[j].style.display='none';
+                            }
+                            this.style.backgroundColor="green";
+                            aLi[i].style.display='block ';
+                        }
+                    })(i)
+                }
+            };
+            tab("box","input","li ");
+            tab("box2","span","li");
+        }
+    </script> .
+
 </head>
 <body>
-<div style="width: 200px;height: 200px;background-color: green;font-size: 40px;text-shadow: 3px 3px 10px #fff;;
-">
-<b>你好</b>
+<div id="box">
+    <input type="button" value="111">
+    <input type="button" value="222">
+    <input type="button" value="333">
+    <input type="button" value="444">
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
 </div>
-<!--<ul>
-    <li style="">123</li>
-    <li>123</li>
-    <li>你好</li>
-    <li>hollow</li>
-</ul>-->
+
+<div id="box2">
+    <span>111</span>
+    <span>222</span>
+    <span>333</span>
+    <span>444</span>
+    <ul>
+        <li style="display: block">111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+</div>
 </body>
 </html>
-<script>
-
-</script>
